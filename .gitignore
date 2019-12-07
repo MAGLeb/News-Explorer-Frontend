@@ -1,0 +1,23 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directory
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Frontend build folder - Dist
+dist
+
+# Optional REPL history
+.DS_Store
+.idea
+.sublime
+.vscode
+Thumbs.db
+
+# Env
+.env

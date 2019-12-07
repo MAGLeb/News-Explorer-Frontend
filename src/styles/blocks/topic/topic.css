@@ -1,0 +1,24 @@
+@import url('./__title/topic__title.css');
+@import url('./__mini/topic__mini.css');
+@import url('./__keys/topic__keys.css');
+
+.topic {
+  display: flex;
+  flex-direction: column;
+
+  padding: 120px 0 0 104px;
+
+  background: #FFFFFF;
+}
+
+@media screen and (max-width: 1023px) {
+  .topic {
+    padding: 90px 0 0 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .topic {
+    padding: 64px 0 0 16px;
+  }
+}

@@ -1,0 +1,28 @@
+.header__menu {
+  width: 24px;
+  height: 24px;
+  display: none;
+}
+
+.header__menu-black {
+  background: url('../../../../images/menu/menu-black.svg');
+}
+
+.header__menu-white {
+  background: url('../../../../images/menu/menu-white.svg');
+}
+
+.header__menu-black-active {
+  background: url('../../../../images/menu/cross-black.svg');
+}
+
+.header__menu-white-active {
+  background: url('../../../../images/menu/cross-white.svg');
+}
+
+@media screen and (max-width: 767px) {
+  .header__menu {
+    cursor: pointer;
+    display: block;
+  }
+}

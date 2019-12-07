@@ -1,0 +1,41 @@
+@import url('./__title/item__title.css');
+@import url('./__subtitle/item__subtitle.css');
+@import url('./__mark/item__mark.css');
+@import url('./__description/item__description.css');
+@import url('./__data/item__data.css');
+@import url('./__author/item__author.css');
+@import url('./__key/item__key.css');
+@import url('./__popup/item__popup.css');
+@import url('./__mark/item__mark-del.css');
+
+.results__item {
+  position: relative;
+  overflow: hidden;
+
+  background: white;
+
+  width: 400px;
+  min-height: 576px;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1279px) {
+  .results__item {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .results__item {
+    width: 224px;
+    min-height: 420px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .results__item {
+    width: 288px;
+    min-height: 440px;
+  }
+}

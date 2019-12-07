@@ -1,0 +1,24 @@
+.nothing__subtitle {
+  width: 356px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 16px 0 80px;
+  text-align: center;
+
+  color: #B6BCBF;
+}
+
+@media screen and (max-width: 1023px) {
+  .nothing__subtitle {
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .nothing__subtitle {
+    width: 250px;
+  }
+}

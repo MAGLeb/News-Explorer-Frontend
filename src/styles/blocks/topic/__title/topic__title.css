@@ -1,0 +1,27 @@
+.topic__title {
+  width: 530px;
+
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  margin-top: 28px;
+  color: #1A1B22;
+}
+
+@media screen and (max-width: 1023px) {
+  .topic__title {
+    width: 430px;
+    font-size: 30px;
+    line-height: 34px;
+    margin-top: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .topic__title {
+    width: 70%;
+    min-width: 288px;
+  }
+}

@@ -1,0 +1,19 @@
+.history__button {
+  border: 1px solid #1A1B22;
+  box-sizing: border-box;
+  border-radius: 80px;
+  background: transparent;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+
+  padding: 15px 70px;
+  margin: 48px auto 0;
+}
+
+.history__button-hide {
+  display: none;
+}

@@ -1,0 +1,10 @@
+.popup__enter {
+  position: absolute;
+  top: 110px;
+
+  font-size: 18px;
+  line-height: 22px;
+  cursor: pointer;
+
+  color: #2F71E5;
+}

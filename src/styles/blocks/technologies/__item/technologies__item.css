@@ -1,0 +1,23 @@
+.technologies__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 70px;
+}
+
+.technologies__item:first-child {
+  margin-left: 0;
+}
+
+@media screen and (max-width: 1279px) {
+  .technologies__item {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .technologies__item {
+    margin-left: 0;
+    width: 50%;
+  }
+}

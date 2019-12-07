@@ -1,0 +1,55 @@
+@import url('./__image/slider__image.css');
+@import url('./__data/slider__data.css');
+@import url('./__main/slider__main.css');
+@import url('./__name/slider__name.css');
+@import url('./__email/slider__email.css');
+@import url('./__about/slider__about.css');
+@import url('./__view/slider__view.css');
+@import url('./__cell/slider__cell.css');
+
+.flickity-page-dots {
+  bottom: -48px;
+}
+
+.flickity-page-dots .dot {
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+  background: #D1D2D6;
+}
+
+.flickity-page-dots .dot.is-selected {
+  background: #1A1B22;
+}
+
+
+@media screen and (max-width: 767px) {
+
+  .flickity-page-dots {
+    bottom: -20px;
+  }
+}
+
+.flickity-prev-next-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  background: #1A1B22;
+  box-shadow: 0px 3px 10px rgba(14, 26, 57, 0.2);
+}
+
+.flickity-button:hover {
+  background: #1A1B22;
+}
+
+.flickity-prev-next-button.previous {
+  left: 24px;
+}
+.flickity-prev-next-button.next {
+  right: 24px;
+}
+
+.flickity-prev-next-button .arrow {
+  fill: white;
+}
+

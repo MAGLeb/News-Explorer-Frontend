@@ -1,0 +1,24 @@
+@import url('./__description/technologies__item-description.css');
+@import url('./__item/technologies__item.css');
+@import url('./__items/technologies__items.css');
+@import url('./__title/technologies__title.css');
+
+.technologies {
+  display: flex;
+  flex-direction: row;
+
+  color: #1A1B22;
+  background: #F5F6F7;
+}
+
+@media screen and (max-width: 1023px) {
+  .technologies {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .technologies {
+    align-items: center;  
+  }
+}

@@ -1,0 +1,29 @@
+@import url('./__title/main__title.css');
+@import url('./__subtitle/main__subtitle.css');
+@import url('./__search/main__search.css');
+@import url('./__input/main__input.css');
+@import url('./__button/main__button.css');
+
+.lead__main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  margin: 0 auto;
+  padding-top: 160px;
+  width: 600px;
+}
+
+@media screen and (max-width: 1023px) {
+  .lead__main {
+    padding-top: 104px;
+    width: 452px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .lead__main {
+    padding-top: 86px;
+    width: 288px;
+  }
+}

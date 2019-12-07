@@ -1,0 +1,36 @@
+.main__input {
+  height: 62px;
+  width: calc(100% - 220px);
+  margin-left: 30px;
+  border: 0;
+  box-sizing: border-box;
+
+  background: #FFFFFF;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #1A1B22;
+}
+
+.main__input::placeholder {
+  color: #B6BCBF;
+}
+
+@media screen and (max-width: 1023px) {
+  .main__input {
+    width: calc(100% - 20%);
+    height: 54px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main__input {
+    width: calc(100% - 20%);
+    margin-left: 0;
+    padding: 20px 0;
+    height: 56px;
+  }
+}

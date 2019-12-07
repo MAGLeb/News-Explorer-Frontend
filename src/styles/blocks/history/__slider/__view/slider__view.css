@@ -1,0 +1,22 @@
+.slider__view {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  margin: auto;
+
+  width: 352px;
+}
+
+@media screen and (max-width: 1023px) {
+  .slider__view {
+    width: 296px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider__view {
+    width: 246px;
+  }
+}

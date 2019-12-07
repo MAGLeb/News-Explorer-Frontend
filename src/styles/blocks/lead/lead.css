@@ -1,0 +1,15 @@
+@import url('./__main/lead__main.css');
+
+.lead {
+  min-width: 320px;
+  max-width: 100%;
+  margin: auto;
+
+  background: url('../../../images/backgroundMain.png');
+}
+
+@media screen and (max-width: 767px) {
+  .lead {
+    height: 536px;
+  }
+}

@@ -1,0 +1,38 @@
+.item__mark-del {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  top: 24px;
+  right: 24px;
+
+  background: #FFFFFF;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.item__mark-del-trash {
+  width: 24px;
+  height: 24px;
+  background: url('../../../../../images/cards/trash.svg');
+}
+
+.item__mark-del:hover .item__mark-del-trash {
+  background: url('../../../../../images/cards/trash_hover.svg');
+}
+
+@media screen and (max-width: 1023px) {
+  .item__mark-del {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .item__mark-del {
+    top: 16px;
+    right: 16px;
+  }
+}
