@@ -2,7 +2,7 @@
 
 https://magleb.github.io/News-Explorer-Frontend/about/
 
-На сервер пока не выложил, заблокировали аккаунт на облаке.
+https://news-discoverer.ml
 
 Реализованы:
 
