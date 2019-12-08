@@ -29,8 +29,9 @@
 @media screen and (max-width: 767px) {
   .main__input {
     width: calc(100% - 20%);
+    margin-top: 1px;
     margin-left: 0;
     padding: 20px 0;
-    height: 56px;
+    height: 54px;
   }
 }

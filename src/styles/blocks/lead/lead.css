@@ -6,6 +6,7 @@
   margin: auto;
 
   background: url('../../../images/backgroundMain.png');
+  background-position: center;
 }
 
 @media screen and (max-width: 767px) {

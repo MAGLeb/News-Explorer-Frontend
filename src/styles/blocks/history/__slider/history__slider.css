@@ -26,7 +26,11 @@
 @media screen and (max-width: 767px) {
 
   .flickity-page-dots {
-    bottom: -20px;
+    bottom: -30px;
+  }
+
+  .flickity-prev-next-button {
+    display: none;
   }
 }
 

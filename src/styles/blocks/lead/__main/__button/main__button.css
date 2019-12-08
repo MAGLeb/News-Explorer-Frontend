@@ -34,8 +34,8 @@
 
 @media screen and (max-width: 767px) {
   .main__button {
-    margin-top: 16px;
-    padding: 16px 0 24px;
+    position: absolute;
+    margin-top: 72px;
     width: 288px;
     height: 56px;
   }

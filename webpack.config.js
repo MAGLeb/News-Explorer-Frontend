@@ -1,7 +1,12 @@
+/* eslint-disable global-require */
+/* eslint-disable no-path-concat */
+/* eslint-disable key-spacing */
+/* eslint-disable prefer-template */
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const WebpackMd5Hash = require('webpack-md5-hash')
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -24,10 +29,27 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader'],
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: { publicPath: '../', }
+          },
+          {
+            loader: 'css-loader',
+            options: { importLoaders: 1 },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path:  __dirname + '/postcss.config.js'
+              }
+            },
+          },
+        ],
       },
       {
-        test: /\.(png|jpg|gif|ico|svg)$/,
+        test: /\.(png|jpg?g|gif|ico|svg)$/i,
         use: [
           'file-loader?name=./images/[name].[ext]',
           {
@@ -35,7 +57,7 @@ module.exports = {
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 65,
+                quality: 85,
               },
               optipng: {
                 enabled: false,
@@ -47,22 +69,27 @@ module.exports = {
               gifsicle: {
                 interlaced: false,
               },
-              webp: {
-                quality: 75,
-              },
             },
           },
         ],
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        loader: 'file-loader?name=./vendor/[name].[ext]',
+        loader: 'file-loader?name=./styles/vendor/[name].[ext]',
       },
     ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'style.[contenthash].css',
+      filename: 'styles/style.[contenthash].css',
+    }),
+    new OptimizeCssAssetsPlugin({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: require('cssnano'),
+      cssProcessorPluginOptions: {
+        preset: ['default', { discardComments: { removeAll: true } }]
+      },
+      canPrint: true
     }),
     new HtmlWebpackPlugin({
       inject: false,
@@ -74,13 +101,13 @@ module.exports = {
       inject: false,
       hash: true,
       template: './src/pages/articles/index.html',
-      filename: 'articles/index.html',
+      filename: './articles/index.html',
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
       template: './src/pages/about/index.html',
-      filename: 'about/index.html',
+      filename: './about/index.html',
     }),
     new WebpackMd5Hash(),
   ],

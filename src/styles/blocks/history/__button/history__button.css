@@ -17,3 +17,7 @@
 .history__button-hide {
   display: none;
 }
+
+.history__button-link {
+  margin: 0 auto;
+}
