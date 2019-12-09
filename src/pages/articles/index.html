@@ -12,19 +12,19 @@
 </head>
 <body>
   <div class="root">
-    <div class="header__background"></div>
-    <header class="header header-black">
+    <header class="header header_black">
+      <div class="header__background"></div>
       <a href="../" class="header__logo">News Discoverer</a>
-      <div class="header__menu header__menu-black"></div>
+      <div class="header__menu header__menu_black"></div>
       <div class="header__nav-auth">
-        <div class="header__nav">
-          <a href="../" class="header__nav-item">Главная</a>
-          <a href="../about/" class="header__nav-item">О проекте</a>
-          <a href="./" class="header__nav-item header__nav-item_active">Сохранённые статьи</a>
-        </div>
+        <ul class="header__nav">
+          <li class="header__nav-element"><a href="../" class="header__nav-item">Главная</a></li>
+          <li class="header__nav-element"><a href="../about/" class="header__nav-item">О проекте</a></li>
+          <li class="header__nav-element"><a href="./" class="header__nav-item header__nav-item_active">Сохранённые статьи</a></li>
+        </ul>
         <div class="header__auth">
           <p class="header__auth-title">Глеб</p>
-          <div class="header__auth-door header__auth-door-black"></div>
+          <div class="header__auth-door header__auth-door_black"></div>
         </div>
       </div>
     </header>
@@ -34,106 +34,129 @@
       <h2 class="topic__title">Глебье-то, у вас 5 сохранённых статей</h2>
       <div class="topic__keys">
         <p class="topic__key">По ключевым словам:</p>
-        <p class="topic__key-bold">Природа, Тайга</p>
+        <p class="topic__key_bold">Природа, Тайга</p>
         <p class="topic__key">и</p>
-        <p class="topic__key-bold">2 другим</p>
+        <p class="topic__key_bold">2 другим</p>
       </div>
     </section>
 
     <section class="results">
       <h3 class="results__title">Результаты поиска</h3>
       <div class="results__container">
-        <div class="results__item">
-          <div class="item__key">Природа</div>
-          <img class="item__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
-          <div class="item__popup item__popup-delete">Убрать из сохранённых</div>
-          <div class="item__mark-del">
-            <div class="item__mark-del-trash"></div>
+        <a href="#" class="card">
+          <img class="card__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
+          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+          <div class="card__mark">
+            <div class="card__mark-save"></div>
           </div>
-          <div class="item__description">
-            <p class="item__data">2 августа, 2019</p>
-            <p class="item__title">Лесные огоньки: история одной фотографии</p>
-            <p class="item__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
+          <div class="card__description">
+            <p class="card__data">2 августа, 2019</p>
+            <p class="card__title">Лесные огоньки: история одной фотографии</p>
+            <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
               из местных чудес природы.</p>
-            <p class="item__author">Медуза</p>
+            <p class="card__author">Медуза</p>
           </div>
-        </div>
-        <div class="results__item">
-          <div class="item__key">Природа</div>
-          <img class="item__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
-          <div class="item__popup item__popup-delete">Убрать из сохранённых</div>
-          <div class="item__mark-del">
-            <div class="item__mark-del-trash"></div>
+        </a>
+        <a href="#" class="card">
+          <img class="card__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
+          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+          <div class="card__mark">
+            <div class="card__mark-save"></div>
           </div>
-          <div class="item__description">
-            <p class="item__data">2 августа, 2019</p>
-            <p class="item__title">Лесные огоньки: история одной фотографии</p>
-            <p class="item__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
+          <div class="card__description">
+            <p class="card__data">2 августа, 2019</p>
+            <p class="card__title">Лесные огоньки: история одной фотографии</p>
+            <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
               из местных чудес природы.</p>
-            <p class="item__author">Медуза</p>
+            <p class="card__author">Медуза</p>
           </div>
-        </div>
-        <div class="results__item">
-          <div class="item__key">Природа</div>
-          <img class="item__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
-          <div class="item__popup item__popup-delete">Убрать из сохранённых</div>
-          <div class="item__mark-del">
-            <div class="item__mark-del-trash"></div>
+        </a>
+        <a href="#" class="card">
+          <img class="card__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
+          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+          <div class="card__mark">
+            <div class="card__mark-save"></div>
           </div>
-          <div class="item__description">
-            <p class="item__data">2 августа, 2019</p>
-            <p class="item__title">Лесные огоньки: история одной фотографии</p>
-            <p class="item__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
+          <div class="card__description">
+            <p class="card__data">2 августа, 2019</p>
+            <p class="card__title">Лесные огоньки: история одной фотографии</p>
+            <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
               из местных чудес природы.</p>
-            <p class="item__author">Медуза</p>
+            <p class="card__author">Медуза</p>
           </div>
-        </div>
-        <div class="results__item">
-          <div class="item__key">Природа</div>
-          <img class="item__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
-          <div class="item__popup item__popup-delete">Убрать из сохранённых</div>
-          <div class="item__mark-del">
-            <div class="item__mark-del-trash"></div>
+        </a>
+        <a href="#" class="card">
+          <img class="card__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
+          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+          <div class="card__mark">
+            <div class="card__mark-save"></div>
           </div>
-          <div class="item__description">
-            <p class="item__data">2 августа, 2019</p>
-            <p class="item__title">Лесные огоньки: история одной фотографии</p>
-            <p class="item__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
+          <div class="card__description">
+            <p class="card__data">2 августа, 2019</p>
+            <p class="card__title">Лесные огоньки: история одной фотографии</p>
+            <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
               из местных чудес природы.</p>
-            <p class="item__author">Медуза</p>
+            <p class="card__author">Медуза</p>
           </div>
-        </div>
-        <div class="results__item">
-          <div class="item__key">Природа</div>
-          <img class="item__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
-          <div class="item__popup item__popup-delete">Убрать из сохранённых</div>
-          <div class="item__mark-del">
-            <div class="item__mark-del-trash"></div>
+        </a>
+        <a href="#" class="card">
+          <img class="card__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
+          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+          <div class="card__mark">
+            <div class="card__mark-save"></div>
           </div>
-          <div class="item__description">
-            <p class="item__data">2 августа, 2019</p>
-            <p class="item__title">Лесные огоньки: история одной фотографии</p>
-            <p class="item__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
+          <div class="card__description">
+            <p class="card__data">2 августа, 2019</p>
+            <p class="card__title">Лесные огоньки: история одной фотографии</p>
+            <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
               из местных чудес природы.</p>
-            <p class="item__author">Медуза</p>
+            <p class="card__author">Медуза</p>
           </div>
-        </div>
+        </a>
+        <a href="#" class="card">
+          <img class="card__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
+          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+          <div class="card__mark">
+            <div class="card__mark-save"></div>
+          </div>
+          <div class="card__description">
+            <p class="card__data">2 августа, 2019</p>
+            <p class="card__title">Лесные огоньки: история одной фотографии</p>
+            <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+              из местных чудес природы.</p>
+            <p class="card__author">Медуза</p>
+          </div>
+        </a>
+        <a href="#" class="card">
+          <img class="card__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
+          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+          <div class="card__mark">
+            <div class="card__mark-save"></div>
+          </div>
+          <div class="card__description">
+            <p class="card__data">2 августа, 2019</p>
+            <p class="card__title">Лесные огоньки: история одной фотографии</p>
+            <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+              из местных чудес природы.</p>
+            <p class="card__author">Медуза</p>
+          </div>
+        </a>
       </div>
     </section>
 
     <footer class="footer">
       <p class="footer__copyright">&#169; 2019 ToF</p>
-      <div class="footer__links">
-        <a href="../" class="footer__link">Главная</a>
-        <a href="../about/" class="footer__link">О проекте</a>
-        <a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a>
-      </div>
+      <ul class="footer__links">
+        <li class="footer__nav-element"><a href="../" class="footer__link">Главная</a></li>
+        <li class="footer__nav-element"><a href="../about/" class="footer__link">О проекте</a></li>
+        <li class="footer__nav-element"><a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a></li>
+      </ul>
       <div class="footer__social">
           <a class="footer__social-link" href="https://github.com/MAGLeb">
             <img alt="MAGLeb's Github" src="../<%= require('../../images/socials/github.svg')%>">
           </a>
           <a class="footer__social-link" href="https://www.facebook.com/profile.php?id=100007321697995">
-              <img alt="Gleb Maximov Facebook" src="../<%= require('../../images/socials/facebook.svg')%>">
+            <img alt="Gleb Maximov Facebook" src="../<%= require('../../images/socials/facebook.svg')%>">
           </a>
       </div>
     </footer>

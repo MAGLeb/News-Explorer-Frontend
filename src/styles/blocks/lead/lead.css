@@ -1,12 +1,11 @@
-@import url('./__main/lead__main.css');
+@import url('./main/main.css');
+@import url('./__picture/lead__picture.css');
 
 .lead {
+  position: relative;
   min-width: 320px;
   max-width: 100%;
   margin: auto;
-
-  background: url('../../../images/backgroundMain.png');
-  background-position: center;
 }
 
 @media screen and (max-width: 767px) {

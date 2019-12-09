@@ -12,19 +12,19 @@
 </head>
 <body>
   <div class="root">
-    <div class="header__background"></div>
-    <header class="header header-black">
+    <header class="header header_black">
+      <div class="header__background"></div>
       <a href="../" class="header__logo">News Discoverer</a>
-      <div class="header__menu header__menu-black"></div>
+      <div class="header__menu header__menu_black"></div>
       <div class="header__nav-auth">
-        <div class="header__nav">
-          <a href="../" class="header__nav-item">Главная</a>
-          <a href="./" class="header__nav-item header__nav-item_active">О проекте</a>
-          <a href="../articles/" class="header__nav-item">Сохранённые статьи</a>
-        </div>
+        <ul class="header__nav">
+          <li class="header__nav-element"><a href="../" class="header__nav-item">Главная</a></li>
+          <li class="header__nav-element"><a href="./" class="header__nav-item header__nav-item_active">О проекте</a></li>
+          <li class="header__nav-element"><a href="../articles/" class="header__nav-item">Сохранённые статьи</a></li>
+        </ul>
         <div class="header__auth">
           <p class="header__auth-title">Глеб</p>
-          <div class="header__auth-door header__auth-door-black"></div>
+          <div class="header__auth-door header__auth-door_black"></div>
         </div>
       </div>
     </header>
@@ -102,7 +102,7 @@
         <h3 class="history__title">История коммитов из GitHub</h3>
         <a class="history__title-link" href="https://github.com/MAGLeb">Открыть в GitHub ></a>
       </div>
-      <div class="history__slider">
+      <div class="slider">
         <div class="slider__cell">
           <p class="slider__data">14 августа, 2019</p>
           <div class="slider__main">
@@ -239,16 +239,16 @@
           </p>
         </div>
       </div>
-      <a class="history__button-link" href="https://github.com/MAGLeb"><button class="history__button history__button-hide">Открыть в GitHub</button></a>
+      <a class="history__button history__button-hide" href="https://github.com/MAGLeb">Открыть в GitHub</a>
     </section>
 
     <footer class="footer">
       <p class="footer__copyright">&#169; 2019 ToF</p>
-      <div class="footer__links">
-        <a href="../" class="footer__link">Главная</a>
-        <a href="./" class="footer__link">О проекте</a>
-        <a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a>
-      </div>
+      <ul class="footer__links">
+        <li class="footer__nav-element"><a href="../" class="footer__link">Главная</a></li>
+        <li class="footer__nav-element"><a href="./" class="footer__link">О проекте</a></li>
+        <li class="footer__nav-element"><a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a></li>
+      </ul>
       <div class="footer__social">
         <a class="footer__social-link" href="https://github.com/MAGLeb">
           <img alt="MAGLeb's Github" src="../<%= require('../../images/socials/github.svg')%>">

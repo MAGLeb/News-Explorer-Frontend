@@ -12,25 +12,32 @@
 </head>
 <body>
   <div class="root">
-    <div class="header__background"></div>
     <header class="header">
+      <div class="header__background"></div>
       <a href="./" class="header__logo">News Discoverer</a>
-      <div class="header__menu header__menu-white"></div>
+      <div class="header__menu header__menu_white"></div>
       <div class="header__nav-auth">
-        <div class="header__nav">
-          <a href="./" class="header__nav-item header__nav-item_active">Главная</a>
-          <a href="./about" class="header__nav-item">О проекте</a>
-          <a href="./articles/" class="header__nav-item">Сохранённые статьи</a>
-        </div>
+        <ul class="header__nav">
+          <li class="header__nav-element"><a href="./" class="header__nav-item header__nav-item_active">Главная</a></li>
+          <li class="header__nav-element"><a href="./about" class="header__nav-item">О проекте</a></li>
+          <li class="header__nav-element"><a href="./articles/" class="header__nav-item">Сохранённые статьи</a></li>
+        </ul>
         <div class="header__auth">
           <p class="header__auth-title">Глеб</p>
-          <div class="header__auth-door header__auth-door-white"></div>
+          <div class="header__auth-door header__auth-door_white"></div>
         </div>
       </div>
     </header>
 
     <section class="lead">
-      <div class="lead__main">
+      <picture>
+        <source media="(max-width: 450px)" srcset="<%= require('./images/backgroundMain360.png') %>">
+        <source media="(min-width: 451px) and (max-width: 599px)" srcset="<%= require('./images/backgroundMain550.png') %>">
+        <source media="(min-width: 600px) and (max-width: 899px)" srcset="<%= require('./images/backgroundMain850.png') %>">
+        <source media="(min-width: 900px)" srcset="<%= require('./images/backgroundMain.png') %>">
+        <img src="<%= require('./images/backgroundMain.png') %>" class="lead__picture" alt="Main picture">
+      </picture>
+      <div class="main">
         <h1 class="main__title">Что в мире творится?</h1>
         <h2 class="main__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h2>
         <form class="main__search">
@@ -42,60 +49,60 @@
 
     <section class="preloader">
       <div class="preloader__spin"></div>
-      <p class="preloader__load">Идет поиск новостей...</p>
+      <h6 class="preloader__load">Идет поиск новостей...</h6>
     </section>
 
     <section class="nothing">
       <img class="nothing__image" src="<%= require('./images/not-found.svg') %>" alt="Nothing found">
-      <p class="nothing__title">Ничего не найдено</p>
+      <h6 class="nothing__title">Ничего не найдено</h6>
       <p class="nothing__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
     </section>
 
     <section class="results">
       <h3 class="results__title">Результаты поиска</h3>
       <div class="results__container">
-        <div class="results__item">
-          <img class="item__image" alt="New's image" src="<%= require('./images/cards/image_1.png') %>">
-          <div class="item__popup">Войдите, чтобы сохранять статьи</div>
-          <div class="item__mark">
-            <div class="item__mark-save"></div>
+        <a href="#" class="card">
+          <img class="card__image" alt="New's image" src="<%= require('./images/cards/image_1.png') %>">
+          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+          <div class="card__mark">
+            <div class="card__mark-save"></div>
           </div>
-          <div class="item__description">
-            <p class="item__data">2 августа, 2019</p>
-            <p class="item__title">Лесные огоньки: история одной фотографии</p>
-            <p class="item__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+          <div class="card__description">
+            <p class="card__data">2 августа, 2019</p>
+            <p class="card__title">Лесные огоньки: история одной фотографии</p>
+            <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
               из местных чудес природы.</p>
-            <p class="item__author">Медуза</p>
+            <p class="card__author">Медуза</p>
           </div>
-        </div>
-        <div class="results__item">
-          <img class="item__image" alt="New's image" src="<%= require('./images/cards/image_1.png') %>">
-          <div class="item__popup">Войдите, чтобы сохранять статьи</div>
-          <div class="item__mark">
-            <div class="item__mark-save"></div>
+        </a>
+        <a href="#" class="card">
+          <img class="card__image" alt="New's image" src="<%= require('./images/cards/image_1.png') %>">
+          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+          <div class="card__mark">
+            <div class="card__mark-save"></div>
           </div>
-          <div class="item__description">
-            <p class="item__data">2 августа, 2019</p>
-            <p class="item__title">Лесные огоньки: история одной фотографии</p>
-            <p class="item__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
+          <div class="card__description">
+            <p class="card__data">2 августа, 2019</p>
+            <p class="card__title">Лесные огоньки: история одной фотографии</p>
+            <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
               из местных чудес природы.</p>
-            <p class="item__author">Медуза</p>
+            <p class="card__author">Медуза</p>
           </div>
-        </div>
-        <div class="results__item">
-          <img class="item__image" alt="New's image" src="<%= require('./images/cards/image_1.png') %>">
-          <div class="item__popup">Войдите, чтобы сохранять статьи</div>
-          <div class="item__mark">
-            <div class="item__mark-saved"></div>
+        </a>
+        <a href="#" class="card">
+          <img class="card__image" alt="New's image" src="<%= require('./images/cards/image_1.png') %>">
+          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+          <div class="card__mark">
+            <div class="card__mark-saved"></div>
           </div>
-          <div class="item__description">
-            <p class="item__data">2 августа, 2019</p>
-            <p class="item__title">Лесные огоньки: история одной фотографии</p>
-            <p class="item__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
+          <div class="card__description">
+            <p class="card__data">2 августа, 2019</p>
+            <p class="card__title">Лесные огоньки: история одной фотографии</p>
+            <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики, чтобы запечатлеть ускользающую красоту одного
               из местных чудес природы.</p>
-            <p class="item__author">Медуза</p>
+            <p class="card__author">Медуза</p>
           </div>
-        </div>
+        </a>
       </div>
       <button class="results__button">Показать еще</button>
     </section>
@@ -117,11 +124,11 @@
 
     <footer class="footer">
         <p class="footer__copyright">&#169; 2019 ToF</p>
-        <div class="footer__links">
-          <a href="./" class="footer__link">Главная</a>
-          <a href="./about/" class="footer__link">О проекте</a>
-          <a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a>
-        </div>
+        <ul class="footer__links">
+          <li class="footer__nav-element"><a href="./" class="footer__link">Главная</a></li>
+          <li class="footer__nav-element"><a href="./about/" class="footer__link">О проекте</a></li>
+          <li class="footer__nav-element"><a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a></li>
+        </ul>
         <div class="footer__social">
             <a class="footer__social-link" href="https://github.com/MAGLeb">
               <img alt="MAGLeb's Github" src="<%= require('./images/socials/github.svg')%>">
@@ -131,6 +138,9 @@
             </a>
         </div>
     </footer>
+  </div>
+
+  <div class="service-area">
 
     <div class="popup"> <!-- add to classList "popup_is-opened" -->
       <div class="popup__content">
@@ -142,7 +152,7 @@
           <div class="popup__error">Неправильный формат email</div>
           <p class="popup__field-name">Пароль</p>
           <input required type="password" name="link" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
-          <button type="submit" class="button popup__button popup__button-active" disabled="true">Войти</button>
+          <button type="submit" class="button popup__button popup__button-active" disabled>Войти</button>
         </form>
         <div class="popup__registration">
             <p class="popup__registration-or">или</p>
@@ -150,6 +160,7 @@
         </div>
       </div>
     </div>
+
     <div class="popup"> <!-- add to classList "popup_is-opened" -->
       <div class="popup__content">
         <img src="<%=require('./images/close.svg')%>" alt="Cross" class="popup__close">
@@ -163,7 +174,7 @@
           <p class="popup__field-name">Имя</p>
           <input required type="text" name="link" class="popup__input popup__input_type_link-url" placeholder="Введите своё имя">
           <div class="popup__error-user">Такой пользователь уже есть</div>
-          <button type="submit" class="button popup__button popup__button-active" disabled="true">Зарегистрироваться</button>
+          <button type="submit" class="button popup__button popup__button-active" disabled>Зарегистрироваться</button>
         </form>
         <div class="popup__registration">
             <p class="popup__registration-or">или</p>
@@ -171,6 +182,7 @@
         </div>
       </div>
     </div>
+
     <div class="popup"> <!-- add to classList "popup_is-opened" -->
       <div class="popup__content">
         <img src="<%=require('./images/close.svg')%>" alt="Cross" class="popup__close">
@@ -178,6 +190,7 @@
         <a href="#" class="popup__enter">Выполнить вход</a>
       </div>
     </div>
+
   </div>
 
   <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

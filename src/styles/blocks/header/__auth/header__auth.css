@@ -11,14 +11,14 @@
 }
 
 .header__auth-title {
-  padding: 12px 0px 12px 19px;
+  padding: 12px 0 12px 19px;
 }
 
-.header__auth-door-black {
+.header__auth-door_black {
   background: url('../../../../images/door/door-black.svg');
 }
 
-.header__auth-door-white {
+.header__auth-door_white {
   background: url('../../../../images/door/door-white.svg');
 }
 
@@ -33,7 +33,7 @@
 @media screen and (max-width: 1023px) {
 
   .header__auth-title {
-    padding: 8px 0px 8px 15px;
+    padding: 8px 0 8px 15px;
   }
 
   .header__auth-door {

@@ -4,7 +4,7 @@
   justify-content: space-between;
   margin: 93px 0 100px 192px;
 
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -13,7 +13,7 @@
 
 @media screen and (max-width: 1279px) {
   .technologies__items {
-    margin-left: 0px;
+    margin-left: 0;
   }
 }
 

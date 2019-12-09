@@ -4,19 +4,19 @@
   display: none;
 }
 
-.header__menu-black {
+.header__menu_black {
   background: url('../../../../images/menu/menu-black.svg');
 }
 
-.header__menu-white {
+.header__menu_white {
   background: url('../../../../images/menu/menu-white.svg');
 }
 
-.header__menu-black-active {
+.header__menu-black_active {
   background: url('../../../../images/menu/cross-black.svg');
 }
 
-.header__menu-white-active {
+.header__menu-white_active {
   background: url('../../../../images/menu/cross-white.svg');
 }
 
@@ -24,5 +24,6 @@
   .header__menu {
     cursor: pointer;
     display: block;
+    z-index: 1;
   }
 }

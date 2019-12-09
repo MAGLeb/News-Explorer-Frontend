@@ -4,7 +4,7 @@
   border-radius: 80px;
   background: transparent;
 
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -12,12 +12,9 @@
 
   padding: 15px 70px;
   margin: 48px auto 0;
+  color: #1A1B22;
 }
 
 .history__button-hide {
   display: none;
-}
-
-.history__button-link {
-  margin: 0 auto;
 }

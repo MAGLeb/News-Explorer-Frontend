@@ -5,7 +5,7 @@ import './style.css'
 import '../../components/menu'
 import Flickity from 'flickity'
 
-const carousel = document.querySelector('.history__slider')
+const carousel = document.querySelector('.slider')
 
 const hanlerDynamicGroupCell = () => (window.screen.width < 1280
   ? (window.screen.width < 1024 ? 1 : 2) : 3)

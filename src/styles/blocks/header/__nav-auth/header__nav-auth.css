@@ -3,7 +3,7 @@
   flex-direction: row;
   align-items: center;
 
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 18px;
@@ -28,8 +28,9 @@
 
     width: 100%;
     background: var(--header-background-color);
+    z-index: 1;
   }
-  .header__nav-auth-active {
+  .header__nav-auth_active {
     display: flex;
   }
 }

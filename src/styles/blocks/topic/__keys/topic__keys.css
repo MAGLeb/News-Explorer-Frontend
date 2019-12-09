@@ -1,5 +1,5 @@
 .topic__keys {
-  font-family: 'Roboto';
+  font-family: 'Roboto', sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -13,7 +13,7 @@
   display: inline-block;
 }
 
-.topic__key-bold {
+.topic__key_bold {
   display: inline-block;
   font-weight: 900;
 }

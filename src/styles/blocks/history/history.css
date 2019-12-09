@@ -1,7 +1,7 @@
 @import url('./__top/history__top.css');
 @import url('./__title/history__title.css');
 @import url('./__title-link/history__title-link.css');
-@import url('./__slider/history__slider.css');
+@import url('./slider/slider.css');
 @import url('./__button/history__button.css');
 
 .history {
