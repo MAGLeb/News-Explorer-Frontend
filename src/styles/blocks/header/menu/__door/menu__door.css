@@ -12,4 +12,6 @@
 
 .menu__door_color_black {
   background: url('../../../../../images/door/door-black.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
