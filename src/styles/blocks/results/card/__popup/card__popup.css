@@ -22,11 +22,6 @@
   border-radius: 10px;
 }
 
-.card__popup-delete {
-  font-size: 12px;
-  line-height: 14px;
-}
-
 @media screen and (max-width: 1023px) {
   .card__popup {
     top: 8px;

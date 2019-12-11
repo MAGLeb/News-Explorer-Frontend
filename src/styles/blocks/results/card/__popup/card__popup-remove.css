@@ -1,0 +1,44 @@
+.card__popup-remove {
+  position: absolute;
+  display: none;
+
+  top: 0px;
+  right: 45px;
+  padding: 8px 12px;
+  width: 160px;
+
+  background: #FFFFFF;
+  border-radius: 10px;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+
+  align-items: center;
+  text-align: center;
+
+  color: #000000;
+}
+
+.card__mark-del:hover .card__popup-remove {
+  display: flex;
+}
+
+@media screen and (max-width: 1279px) {
+  .card__popup-remove {
+    width: 100px;
+    top: -10px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .card__popup-remove {
+    display: none;
+  }
+
+  .card__mark-del:hover .card__popup-remove {
+    display: none;
+  }
+}

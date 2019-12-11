@@ -4,7 +4,7 @@
   column-gap: 16px;
   row-gap: 16px;
 
-  margin: 0 auto 64px;
+  margin: 64px auto 64px;
 }
 
 @media screen and (max-width: 1279px) {
@@ -12,6 +12,7 @@
     grid-template-columns: 320px 320px 320px;
     column-gap: 8px;
     row-gap: 8px;
+    margin-top: 44px;
   }
 }
 
@@ -20,7 +21,7 @@
     grid-template-columns: 224px 224px 224px;
     column-gap: 8px;
     row-gap: 8px;
-    margin-bottom: 22px;
+    margin: 32px auto 22px;
   }
 }
 
@@ -28,6 +29,6 @@
   .results__container {
     grid-template-columns: 288px;
     row-gap: 10px;
-    margin-bottom: 15px;
+    margin: 24px auto 15px;
   }
 }

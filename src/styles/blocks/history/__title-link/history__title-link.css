@@ -9,6 +9,8 @@
   color: #1a1b22;
 }
 
-.history__title-link-hide {
-  display: none;
+@media screen and (max-width: 767px) {
+  .history__title-link {
+    display: none;
+  }
 }

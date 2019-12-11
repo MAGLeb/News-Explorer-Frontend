@@ -1,4 +1,6 @@
 .history__button {
+  display: none;
+
   border: 1px solid #1A1B22;
   box-sizing: border-box;
   border-radius: 80px;
@@ -15,6 +17,8 @@
   color: #1A1B22;
 }
 
-.history__button-hide {
-  display: none;
+@media screen and (max-width: 767px) {
+  .history__button {
+    display: block;
+  }
 }
