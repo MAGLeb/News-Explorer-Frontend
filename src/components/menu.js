@@ -1,11 +1,11 @@
 const menu = document.querySelector('.menu')
-const headerContent = document.querySelector('.header__content')
-const headerBackground = document.querySelector('.header__background')
-const headerIcon = document.querySelector('.header__icon')
+const content = document.querySelector('.header__content')
+const background = document.querySelector('.header__background')
+const icon = document.querySelector('.header__icon')
 
-headerIcon.addEventListener('click', () => {
-  headerBackground.classList.toggle('header__background_state_active')
-  headerContent.classList.toggle('header__content_state_active')
+icon.addEventListener('click', () => {
+  background.classList.toggle('header__background_state_active')
+  content.classList.toggle('header__content_state_active')
   menu.classList.toggle('menu_state_active')
-  headerIcon.classList.toggle('header__icon-close')
+  icon.classList.toggle('header__icon-close')
 })
