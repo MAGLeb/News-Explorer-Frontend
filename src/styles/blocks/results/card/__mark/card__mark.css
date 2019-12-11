@@ -18,11 +18,11 @@
   width: 14px;
   height: 19px;
   background: url('../../../../../images/cards/mark_saved.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 
 .card__mark:hover .card__mark-saved {
-  background-size: 100%;
-  background-repeat: no-repeat;
   transition: 1ms;
   width: 16px;
   height: 21px;
@@ -31,11 +31,13 @@
 .card__mark-save {
   width: 14px;
   height: 19px;
-  background: url('../../../../../images/cards/mark.svg');
+  mask: url('../../../../../images/cards/mark.svg');
+  mask-size: cover;
+  background: #B6BCBF;
 }
 
 .card__mark:hover .card__mark-save {
-  background: url('../../../../../images/cards/mark_hover.svg');
+  background: #1A1B22;
 }
 
 @media screen and (max-width: 1023px) {

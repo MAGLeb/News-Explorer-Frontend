@@ -3,7 +3,7 @@
 /* eslint-disable no-unused-vars */
 import './style.css'
 import Flickity from 'flickity'
-
+import '../../components/menu'
 
 // Slider settings
 const carousel = document.querySelector('.slider')

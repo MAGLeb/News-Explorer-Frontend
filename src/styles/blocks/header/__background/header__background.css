@@ -2,9 +2,12 @@
   display: none;
 }
 
+.header__background_state_active {
+  display: flex;
+}
+
 @media screen and (max-width: 767px) {
   .header__background {
-    display: block;
     position: fixed;
     background-color: rgb(0, 0, 0, 0.5);
     width: 100%;

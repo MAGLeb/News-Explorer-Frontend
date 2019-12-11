@@ -10,6 +10,10 @@
   margin-right: 104px;
 }
 
+.menu.menu_state_active {
+  display: flex;
+}
+
 @media screen and (max-width: 1023px) {
   .menu {
     margin-right: 40px;
@@ -19,6 +23,7 @@
 
 @media screen and  (max-width: 767px) {
   .menu {
+    display: none;
     flex-direction: column;
     background-color: var(--header-color-background);
     margin: 26px 0 0 0;
