@@ -1,0 +1,15 @@
+.menu__door {
+  width: 24px;
+  height: 24px;
+  margin-left: 8px;
+}
+
+.menu__door_color_white {
+  background: url('../../../../../images/door/door-white.svg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.menu__door_color_black {
+  background: url('../../../../../images/door/door-black.svg');
+}

@@ -1,0 +1,15 @@
+.header__icon {
+  display: none;
+}
+
+@media screen and (max-width: 767px) {
+  .header__icon {
+    display: block;
+    position: absolute;
+    background: url('../../../../images/menu/menu-white.svg');
+    width: 24px;
+    height: 24px;
+    top: 16px;
+    right: 16px;
+  }
+}

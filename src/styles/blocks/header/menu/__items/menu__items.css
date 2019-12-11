@@ -1,0 +1,11 @@
+.menu__items {
+  display: flex;
+  padding: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .menu__items {
+    flex-direction: column;
+    margin-left: 16px;
+  }
+}

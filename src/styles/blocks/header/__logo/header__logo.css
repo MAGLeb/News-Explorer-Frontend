@@ -4,13 +4,20 @@
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
-  color: var(--header-text-color);
+
+  margin-left: 104px;
+
+  color: var(--header-color-inside);
+}
+
+@media screen and (max-width: 1023px) {
+  .header__logo {
+    margin-left: 40px;
+  }
 }
 
 @media screen and (max-width: 767px) {
   .header__logo {
-    font-size: 16px;
-    line-height: 24px;
-    z-index: 1;
+    margin: 16px 0 0 16px;
   }
 }

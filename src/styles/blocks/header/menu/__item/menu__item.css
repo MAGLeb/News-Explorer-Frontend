@@ -1,0 +1,15 @@
+.menu__item {
+  margin-right: 34px;
+}
+
+@media screen and (max-width: 1023px) {
+  .menu__item {
+    margin-right: 16px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .menu__item {
+    margin: 10px 0 26px;
+  }
+}

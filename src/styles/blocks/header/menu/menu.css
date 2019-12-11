@@ -1,0 +1,27 @@
+@import url('./__link/menu__link.css');
+@import url('./__items/menu__items.css');
+@import url('./__item/menu__item.css');
+@import url('./__button/menu__button.css');
+@import url('./__door/menu__door.css');
+
+.menu {
+  display: flex;
+
+  margin-right: 104px;
+}
+
+@media screen and (max-width: 1023px) {
+  .menu {
+    margin-right: 40px;
+    align-items: center;
+  }
+}
+
+@media screen and  (max-width: 767px) {
+  .menu {
+    flex-direction: column;
+    background-color: var(--header-color-background);
+    margin: 26px 0 0 0;
+    align-items: unset;
+  }
+}
