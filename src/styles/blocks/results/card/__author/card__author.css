@@ -1,0 +1,22 @@
+.card__author {
+  position: absolute;
+  bottom: 16px;
+  left: 24px;
+
+  font-family: 'Roboto Slab', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 20px;
+
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  color: #B6BCBF;
+}
+
+@media screen and (max-width: 1279px) {
+  .card__author {
+    left: 14px;
+  }
+}

@@ -1,0 +1,23 @@
+@import url('./__top/history__top.css');
+@import url('./__title/history__title.css');
+@import url('./__title-link/history__title-link.css');
+@import url('./slider/slider.css');
+@import url('./__button/history__button.css');
+
+.history {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 136px;
+}
+
+@media screen and (max-width: 1023px) {
+  .history {
+    margin-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .history {
+    margin-bottom: 32px;
+  }
+}

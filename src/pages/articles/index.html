@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Gleb Maximov">
+  <meta name="description" content="About the project">
+  <title>News Discover</title>
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.articles.css %>">
+  <link rel="icon" href="../<%= require('../../images/favicon.png')%>" type="image/png">
+</head>
+<body>
+  <div class="root">
+    <header class="header header_theme_black">
+      <div class="header__background"></div>
+      <div class="header__content">
+        <a href="../" class="header__logo">NewsDiscoverer</a>
+        <div class="header__icon header__icon_color_black"></div>
+        <div class="menu">
+          <ul class="menu__items">
+            <li class="menu__item"><a href="../" class="menu__link">Главная</a></li>
+            <li class="menu__item"><a href="../about" class="menu__link">О проекте</a></li>
+            <li class="menu__item"><a href="../articles" class="menu__link menu__link_active">Сохранённые статьи</a></li>
+          </ul>
+          <button class="menu__button">
+            Глебье-то
+            <div class="menu__door menu__door_color_black"></div>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <section class="topic">
+      <p class="topic__mini">Сохранённые статьи</p>
+      <h2 class="topic__title">Глебье-то, у вас 5 сохранённых статей</h2>
+      <div class="topic__keys">
+        <p class="topic__key">По ключевым словам:</p>
+        <p class="topic__key_bold">Природа, Тайга</p>
+        <p class="topic__key">и</p>
+        <p class="topic__key_bold">2 другим</p>
+      </div>
+    </section>
+
+    <section class="results">
+      <div class="results__container">
+        <div class="card">
+          <div class="card__mark-del">
+            <div class="card__mark-del-trash"></div>
+            <div class="card__popup-remove">Убрать из сохранённых</div>
+          </div>
+          <div class="card__key">Природа</div>
+          <a class="card__link" href="#">
+            <img class="card__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
+            <div class="card__description">
+              <p class="card__data">2 августа, 2019</p>
+              <p class="card__title">Лесные огоньки: история одной фотографии</p>
+              <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+                из местных чудес природы.</p>
+              <p class="card__author">Медуза</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p class="footer__copyright">&#169; 2019 ToF</p>
+      <ul class="footer__links">
+        <li class="footer__nav-element"><a href="../" class="footer__link">Главная</a></li>
+        <li class="footer__nav-element"><a href="../about/" class="footer__link">О проекте</a></li>
+        <li class="footer__nav-element"><a href="https://praktikum.yandex.ru/" class="footer__link">Яндекс.Практикум</a></li>
+      </ul>
+      <div class="footer__social">
+          <a class="footer__social-link" href="https://github.com/MAGLeb">
+            <img alt="MAGLeb's Github" src="../<%= require('../../images/socials/github.svg')%>">
+          </a>
+          <a class="footer__social-link" href="https://www.facebook.com/profile.php?id=100007321697995">
+            <img alt="Gleb Maximov Facebook" src="../<%= require('../../images/socials/facebook.svg')%>">
+          </a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="<%= htmlWebpackPlugin.files.chunks.articles.entry %>"></script>
+</body>
+
+</html>
+

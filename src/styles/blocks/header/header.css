@@ -1,0 +1,11 @@
+@import url('./menu/menu.css');
+@import url('./__icon/header__icon.css');
+@import url('./__logo/header__logo.css');
+@import url('./_theme/header_theme.css');
+@import url('./__background/header__background.css');
+@import url('./__content/header__content.css');
+
+.header {
+  --header-color-inside: #fff;
+  --header-color-background: #1a1b22;
+}

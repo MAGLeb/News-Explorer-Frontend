@@ -1,0 +1,15 @@
+.clients__main {
+  margin-left: 104px;
+}
+
+@media screen and (max-width: 1023px) {
+  .clients__main {
+    margin-left: 40px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .clients__main {
+    margin-left: 16px;
+  }
+}

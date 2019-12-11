@@ -1,0 +1,16 @@
+.history__title-link {
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  min-width: 178px;
+
+  color: #1a1b22;
+}
+
+@media screen and (max-width: 767px) {
+  .history__title-link {
+    display: none;
+  }
+}

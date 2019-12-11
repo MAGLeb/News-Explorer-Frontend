@@ -1,0 +1,53 @@
+.card__mark {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  top: 24px;
+  right: 24px;
+
+  background: #FFFFFF;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+}
+
+.card__mark-saved {
+  width: 14px;
+  height: 19px;
+  background: url('../../../../../images/cards/mark_saved.svg');
+}
+
+.card__mark:hover .card__mark-saved {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  transition: 1ms;
+  width: 16px;
+  height: 21px;
+}
+
+.card__mark-save {
+  width: 14px;
+  height: 19px;
+  background: url('../../../../../images/cards/mark.svg');
+}
+
+.card__mark:hover .card__mark-save {
+  background: url('../../../../../images/cards/mark_hover.svg');
+}
+
+@media screen and (max-width: 1023px) {
+  .card__mark {
+    top: 8px;
+    right: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card__mark {
+    top: 16px;
+    right: 16px;
+  }
+}

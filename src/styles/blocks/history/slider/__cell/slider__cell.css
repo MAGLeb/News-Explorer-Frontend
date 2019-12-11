@@ -1,0 +1,24 @@
+.slider__cell {
+  width: 400px;
+  height: 288px;
+  margin-right: 16px;
+  background: white;
+  border-radius: 16px;
+  color: black;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 1023px) {
+  .slider__cell {
+    width: 336px;
+    height: 242px;
+    margin-right: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .slider__cell {
+    width: 288px;
+    height: 264px;
+  }
+}

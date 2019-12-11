@@ -1,0 +1,29 @@
+@import url('./__subtitle/clients__subtitle.css');
+@import url('./__title/clients__title.css');
+@import url('./__main/clients__main.css');
+
+.clients {
+  min-width: 320px;
+  max-width: 100%;
+  background: white;
+  margin: auto;
+  padding-top: 160px;
+  padding-bottom: 72px;
+
+  color: #1A1B22;
+  font-family: 'Roboto Slab', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+@media screen and (max-width: 1023px) {
+  .clients {
+    padding-top: 96px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .clients {
+    padding-top: 70px;
+  }
+}

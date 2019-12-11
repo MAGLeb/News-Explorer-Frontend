@@ -1,0 +1,7 @@
+.slider__about {
+  display: flex;
+  flex-direction: column;
+  margin-left: 16px;
+
+  color: #1a1b22;
+}

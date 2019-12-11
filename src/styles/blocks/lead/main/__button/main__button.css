@@ -1,0 +1,42 @@
+.main__button {
+  width: 168px;
+  height: 64px;
+
+  background: #2F71E5;
+  box-shadow:0 5px 15px rgba(14, 26, 57, 0.2);
+  border-radius: 100px;
+  border: 0;
+  cursor: pointer;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+
+  color: white;
+}
+
+.main__button:hover {
+  background: #347EFF;
+}
+
+.main__button:active {
+  background: #2A65CC;
+}
+
+@media screen and (max-width: 1023px) {
+  .main__button {
+    width: 160px;
+    height: 56px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .main__button {
+    position: absolute;
+    margin-top: 72px;
+    width: 288px;
+    height: 56px;
+  }
+}

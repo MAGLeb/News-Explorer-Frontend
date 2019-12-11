@@ -1,0 +1,7 @@
+@import url('./styles/index.css');
+@import url('./styles/blocks/lead/lead.css');
+@import url('./styles/blocks/author/author.css');
+@import url('./styles/blocks/results/results.css');
+@import url('./styles/blocks/preloader/preloader.css');
+@import url('./styles/blocks/nothing/nothing.css');
+@import url('./styles/blocks/popup/popup.css');

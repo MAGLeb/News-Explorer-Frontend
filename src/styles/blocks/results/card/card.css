@@ -1,0 +1,43 @@
+@import url('./__title/card__title.css');
+@import url('./__subtitle/card__subtitle.css');
+@import url('./__mark/card__mark.css');
+@import url('./__description/card__description.css');
+@import url('./__data/card__data.css');
+@import url('./__author/card__author.css');
+@import url('./__key/card__key.css');
+@import url('./__popup/card__popup.css');
+@import url('./__mark/card__mark-del.css');
+@import url('./__link/card__link.css');
+@import url('./__popup/card__popup-remove.css');
+
+.card {
+  position: relative;
+  overflow: hidden;
+
+  background: white;
+
+  width: 400px;
+  min-height: 576px;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1279px) {
+  .card {
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .card {
+    width: 224px;
+    min-height: 420px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    width: 288px;
+    min-height: 440px;
+  }
+}

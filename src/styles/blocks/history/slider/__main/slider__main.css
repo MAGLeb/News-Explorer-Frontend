@@ -1,0 +1,5 @@
+.slider__main {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 16px 24px;
+}

@@ -1,0 +1,22 @@
+.history__top {
+  display: flex;
+  justify-content: space-between;
+
+  margin: 72px 0 64px 104px;
+  width: calc(100% - 208px);
+
+  color: #1a1b22;
+}
+
+@media screen and (max-width: 1023px) {
+  .history__top {
+    margin: 40px 40px 32px;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .history__top {
+    margin: 32px 16px 16px;
+  }
+}

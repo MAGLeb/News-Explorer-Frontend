@@ -1,0 +1,21 @@
+@import url('./__load/preload__load.css');
+@import url('./__spin/preloader__spin.css');
+
+.preloader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 282px;
+  min-width: 320px;
+  max-width: 100%;
+  background: #F5F6F7;
+
+	overflow: hidden;
+}
+
+@media screen and (max-width: 1023px) {
+  .preloader {
+    height: 222px;
+  }
+}

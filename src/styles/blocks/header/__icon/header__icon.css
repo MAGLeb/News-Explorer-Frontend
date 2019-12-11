@@ -1,0 +1,22 @@
+.header__icon {
+  display: none;
+}
+
+.header__icon_color_white {
+  background: url('../../../../images/menu/menu-white.svg');
+}
+
+.header__icon_color_black {
+  background: url('../../../../images/menu/menu-black.svg');
+}
+
+@media screen and (max-width: 767px) {
+  .header__icon {
+    display: block;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: 16px;
+    right: 16px;
+  }
+}

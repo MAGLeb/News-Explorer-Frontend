@@ -1,0 +1,40 @@
+.card__popup {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 40px;
+  padding: 0 10px;
+  top: 24px;
+  left: 24px;
+
+  background: #FFFFFF;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 10px;
+  line-height: 12px;
+
+  color: #000000;
+
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 1023px) {
+  .card__popup {
+    top: 8px;
+    left: 8px;
+    width: 100px;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card__popup {
+    top: 16px;
+    left: 16px;
+    width: auto;
+  }
+}

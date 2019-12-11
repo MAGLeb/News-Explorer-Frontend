@@ -1,0 +1,15 @@
+@import url('./main/main.css');
+@import url('./__picture/lead__picture.css');
+
+.lead {
+  position: relative;
+  min-width: 320px;
+  max-width: 100%;
+  margin: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .lead {
+    height: 536px;
+  }
+}
