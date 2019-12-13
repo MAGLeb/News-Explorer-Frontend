@@ -5,11 +5,12 @@
   line-height: 14px;
   margin-top: 4px;
   cursor: default;
+  display: none;
 
   color: #FF0000;
 }
 
-.popup__error-active {
+.popup__error_active {
   display: block;
 }
 

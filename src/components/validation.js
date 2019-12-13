@@ -1,4 +1,4 @@
-export default function checkInputs(form) {
+export default function validation(form) {
   const inputs = Array.from(form.querySelectorAll('input'))
   const errors = Array.from(form.querySelectorAll('.popup__error'))
   const button = form.querySelector('button')
@@ -11,32 +11,40 @@ export default function checkInputs(form) {
   inputs.forEach((item, index) => {
     item.addEventListener('input', () => {
       if (item.name === 'email') {
-        if (!validateEmail(item.value)) {
+        if (item.value === '') {
+          errors[index].textContent = 'Это обязательное поле'
+          errors[index].classList.add('popup__error_active')
+        } else if (validateEmail(item.value)) {
+          errors[index].classList.remove('popup__error_active')
+        } else {
           errors[index].textContent = 'Неправильный формат email'
           errors[index].classList.add('popup__error_active')
         }
-        errors[index].classList.remove('popup__error_active')
       }
 
-      if (item.value === '') {
-        errors[index].textContent = 'Это обязательное поле'
-        errors[index].classList.add('popup__error_active')
-      } else if (item.value.length === 1) {
-        errors[index].classList.add('popup__error_active')
-        errors[index].textContent = 'Должно быть от 2 до 30 символов'
-      } else if (item.value.length <= 2) {
-        errors[index].classList.remove('popup__error_active')
+      if (item.name === 'name') {
+        if (item.value === '') {
+          errors[2].textContent = 'Это обязательное поле'
+          errors[2].classList.add('popup__error_active')
+        } else if (item.value.length === 1) {
+          errors[2].classList.add('popup__error_active')
+          errors[2].textContent = 'Должно быть от 2 до 30 символов'
+        } else if (item.value.length <= 2) {
+          errors[2].classList.remove('popup__error_active')
+        }
       }
 
-      const checkInputsValue = inputs.every((input) => input.value !== '')
-      const checkErrorClass = errors.every((error) => !error.classList.contains('popup__error_active'))
+      const checkInputsValue = () => inputs.every((input) => input.value !== '')
+      const checkErrorClass = () => errors.every((error) => !error.classList.contains('popup__error_active'))
 
-      if (checkInputsValue && checkErrorClass) {
+      if (checkInputsValue() && checkErrorClass()) {
         button.classList.add('popup__button_active')
+        button.classList.add('button')
         button.removeAttribute('disabled')
       } else {
         button.classList.remove('popup__button_active')
-        button.setAttribute('disabled')
+        button.classList.remove('button')
+        button.setAttribute('disabled', 'true')
       }
     })
   })
