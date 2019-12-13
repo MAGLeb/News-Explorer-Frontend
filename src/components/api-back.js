@@ -5,9 +5,29 @@ export default class ApiBack {
     this.signup = this.options.signup
     this.getUser = this.options.getUser
     this.articles = this.options.articles
+    this.logout = this.options.logout
   }
 
-  /* TODO logout */
+  logout() {
+    return fetch(this.logout,
+      {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'cors',
+        credentials: 'include',
+      })
+      .then((res) => {
+        if (res.ok) {
+          return res.json()
+        }
+        throw new Error(`Error logout ${res.status}`)
+      })
+      .catch((err) => {
+        throw new Error(err.message)
+      })
+  }
 
   getAllArticles() {
     return fetch(this.articles,
