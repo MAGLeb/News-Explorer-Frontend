@@ -44,7 +44,7 @@
         <h2 class="main__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h2>
         <form class="main__search">
           <input class="main__input" placeholder="Введите тему новости" required>
-          <button class="main__button">Искать</button>
+          <button class="main__button button">Искать</button>
         </form>
       </div>
     </section>
@@ -127,7 +127,8 @@
           <div class="popup__error">Неправильный формат email</div>
           <p class="popup__field">Пароль</p>
           <input required type="password" name="password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
-          <button type="submit" class="button popup__button">Войти</button>
+          <div class="popup__error"></div>
+          <button type="submit" class="popup__button" disabled>Войти</button>
         </form>
         <div class="popup__registration">
             <p class="popup__registration-or">или</p>
@@ -146,6 +147,7 @@
           <div class="popup__error">Неправильный формат email</div>
           <p class="popup__field">Пароль</p>
           <input required type="password" name="password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
+          <div class="popup__error"></div>
           <p class="popup__field">Имя</p>
           <input required type="text" name="name" class="popup__input popup__input_type_link-url" placeholder="Введите своё имя">
           <div class="popup__error"></div>

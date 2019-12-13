@@ -22,6 +22,18 @@ export default function validation(form) {
         }
       }
 
+      if (item.name === 'password') {
+        if (item.value === '') {
+          errors[index].textContent = 'Это обязательное поле'
+          errors[index].classList.add('popup__error_active')
+        } else if (item.value.length < 8) {
+          errors[index].classList.add('popup__error_active')
+          errors[index].textContent = 'Должно быть от 8 символов'
+        } else if (item.value.length <= 8) {
+          errors[index].classList.remove('popup__error_active')
+        }
+      }
+
       if (item.name === 'name') {
         if (item.value === '') {
           errors[2].textContent = 'Это обязательное поле'
