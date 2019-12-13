@@ -1,6 +1,7 @@
 import './style.css'
 import './components/menu'
 import ApiNews from './components/api-news'
+import { publicNewsUrl } from './components/config'
 
 
-const apiNews = new ApiNews('https://newsapi.org/v2/everything?sortBy=popularity&apiKey=ef22b38c31ba4ed38c6d743b6eb163ba&language=ru&pageSize=100')
+const apiNews = new ApiNews(publicNewsUrl)

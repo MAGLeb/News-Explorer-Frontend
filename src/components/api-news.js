@@ -1,7 +1,7 @@
 /* eslint-disable no-plusplus */
 export default class ApiNews {
-  constructor(fixedUrl) {
-    this.fixedUrl = fixedUrl
+  constructor(publicNewsUrl) {
+    this.publicNewsUrl = publicNewsUrl
   }
 
   getInitNews(keys) {
@@ -9,7 +9,7 @@ export default class ApiNews {
     const dateMinusWeek = new Date(dateNow - 7 * 24 * 3600 * 1000)
     const dateTo = `${dateNow.getFullYear()}-${dateNow.getMonth() + 1}-${dateNow.getDate()}`
     const dateFrom = `${dateMinusWeek.getFullYear()}-${dateMinusWeek.getMonth() + 1}-${dateMinusWeek.getDate()}`
-    const url = `${this.fixedUrl}&q=${keys}&from=${dateFrom}&to=${dateTo}`
+    const url = `${this.publicNewsUrl}&q=${keys}&from=${dateFrom}&to=${dateTo}`
     return fetch(url)
       .then((res) => {
         if (!res.ok) throw new Error('Something went wrong')
