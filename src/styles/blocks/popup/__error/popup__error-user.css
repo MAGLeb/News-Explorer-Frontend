@@ -1,15 +1,13 @@
 .popup__error-user {
-  position: relative;
+  position: absolute;
+  top: 145px;
+  left: 105px;
+
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   line-height: 14px;
   cursor: default;
   text-align: center;
 
-  margin-top: 20px;
-
   color: #FF0000;
 }
-
-
-
