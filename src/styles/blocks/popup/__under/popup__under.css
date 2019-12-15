@@ -1,4 +1,4 @@
-.popup__registration {
+.popup__under {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -13,11 +13,11 @@
   color: #000000;
 }
 
-.popup__registration-or {
+.popup__under-or {
   display: inline-block;
 }
 
-.popup__registration-link {
+.popup__under-link {
   display: inline-block;
   margin-left: 5px;
   cursor: pointer;

@@ -7,9 +7,9 @@
 @import url(./_is-opened/popup_is-opened.css);
 @import url(./__error/popup__error.css);
 @import url(./__field-name/popup__field.css);
-@import url(./__registration/popup__registration.css);
-@import url(./__error/popup__error-user.css);
+@import url(./__under/popup__under.css);
 @import url(./__enter/popup__enter.css);
+@import url(./__bottom/popup__bottom.css);
 
 .popup {
   position: fixed;

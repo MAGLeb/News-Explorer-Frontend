@@ -1,23 +1,27 @@
-.popup__error {
-  position: absolute;
+@import url(./popup__error-top-of-button.css);
+
+.popup__errors {
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   line-height: 14px;
-  margin-top: 4px;
   cursor: default;
   display: none;
 
   color: #FF0000;
 }
 
-.popup__error_active {
-  display: block;
+.popup__error {
+  position: absolute;
+}
+
+.popup__error-margin {
+  margin-top: -24px;
 }
 
 .popup__error:first-of-type {
   margin-top: -24px;
 }
 
-.popup__error-profile:first-of-type {
-  margin-top: 4px;
+.popup__error_is-active {
+  display: block;
 }

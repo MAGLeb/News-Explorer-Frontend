@@ -117,47 +117,51 @@
   </div>
 
   <div class="service-area">
-    <div class="popup popup_is-opened"> <!-- add to classList "popup_is-opened" -->
+    <div class="popup"> <!-- add to classList "popup_is-opened" -->
       <div class="popup__content">
         <img src="<%=require('./images/popup/close.svg')%>" alt="Cross" class="popup__close">
         <h3 class="popup__title">Вход</h3>
         <form class="popup__form" name="enter">
           <p class="popup__field">Email</p>
           <input required type="text" name="email" class="popup__input popup__input_type_name" placeholder="Введите почту">
-          <div class="popup__error">Неправильный формат email</div>
+          <div class="popup__errors popup__error">Неправильный формат email</div>
           <p class="popup__field">Пароль</p>
           <input required type="password" name="password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
-          <div class="popup__error"></div>
-          <div class="popup__error-user"></div>
-          <button type="submit" class="popup__button" disabled>Войти</button>
+          <div class="popup__errors popup__error">Пароль не менее 8 символов</div>
+          <div class="popup__bottom">
+            <div class="popup__errors popup__error-top-of-button">Неправильный логин или пароль</div>
+            <button type="submit" class="popup__button" disabled>Войти</button>
+          </div>
         </form>
-        <div class="popup__registration">
-            <p class="popup__registration-or">или</p>
-            <p class="popup__registration-link">Зарегистрироваться</p>
+        <div class="popup__under">
+            <p class="popup__under-or">или</p>
+            <p class="popup__under-link">Зарегистрироваться</p>
         </div>
       </div>
     </div>
 
-    <div class="popup popup-reg"> <!-- add to classList "popup_is-opened" -->
+    <div class="popup popup-reg popup_is-opened"> <!-- add to classList "popup_is-opened" -->
       <div class="popup__content">
         <img src="<%=require('./images/popup/close.svg')%>" alt="Cross" class="popup__close">
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="new">
           <p class="popup__field">Email</p>
           <input required type="text" name="email" class="popup__input popup__input_type_name" placeholder="Введите почту">
-          <div class="popup__error">Неправильный формат email</div>
+          <div class="popup__errors popup__error">Неправильный формат email</div>
           <p class="popup__field">Пароль</p>
           <input required type="password" name="password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
-          <div class="popup__error"></div>
+          <div class="popup__errors popup__error popup__error-margin">Пароль не менее 8 символов</div>
           <p class="popup__field">Имя</p>
           <input required type="text" name="name" class="popup__input popup__input_type_link-url" placeholder="Введите своё имя">
-          <div class="popup__error"></div>
-          <div class="popup__error-user popup__error_active">Такой пользователь уже есть</div>
-          <button type="submit" class="button popup__button">Зарегистрироваться</button>
+          <div class="popup__errors popup__error">Имя должно быть от 2 до 30 символов</div>
+          <div class="popup__bottom">
+            <div class="popup__errors popup__error-top-of-button">Такой пользователь уже есть</div>
+            <button type="submit" class="popup__button" disabled>Зарегистрироваться</button>
+          </div>
         </form>
-        <div class="popup__registration">
-            <p class="popup__registration-or">или</p>
-            <p class="popup__registration-link">Войти</p>
+        <div class="popup__under">
+            <p class="popup__under-or">или</p>
+            <p class="popup__under-link">Войти</p>
         </div>
       </div>
     </div>

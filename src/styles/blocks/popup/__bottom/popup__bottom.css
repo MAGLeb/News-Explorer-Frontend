@@ -1,0 +1,6 @@
+.popup__bottom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 46px;
+}

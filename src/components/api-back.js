@@ -1,15 +1,18 @@
+/* eslint-disable import/prefer-default-export */
 /* eslint-disable no-unused-vars */
 export default class ApiBack {
-  constructor(options) {
-    this.signin = this.options.signin
-    this.signup = this.options.signup
-    this.getUser = this.options.getUser
-    this.articles = this.options.articles
-    this.logout = this.options.logout
+  constructor({
+    articles, signin, signup, logout, getInfoAboutMe
+  }) {
+    this.signinUrl = signin
+    this.signupUrl = signup
+    this.getInfoAboutMeUrl = getInfoAboutMe
+    this.articlesUrl = articles
+    this.logoutUrl = logout
   }
 
   logout() {
-    return fetch(this.logout,
+    return fetch(this.logoutUrl,
       {
         method: 'GET',
         headers: {
@@ -30,7 +33,7 @@ export default class ApiBack {
   }
 
   getAllArticles() {
-    return fetch(this.articles,
+    return fetch(this.articlesUrl,
       {
         method: 'GET',
         headers: {
@@ -43,7 +46,7 @@ export default class ApiBack {
         if (res.ok) {
           return res.json()
         }
-        throw new Error(`Ошибка чтения карточек ${res.status}`)
+        throw new Error(`Error get articles  ${res.status}`)
       })
       .catch((err) => {
         throw new Error(err.message)
@@ -51,7 +54,7 @@ export default class ApiBack {
   }
 
   getInfoAboutMe() {
-    return fetch(this.getUser, {
+    return fetch(this.getInfoAboutMeUrl, {
       credentials: 'include'
     })
       .then((res) => {
@@ -66,8 +69,8 @@ export default class ApiBack {
       })
   }
 
-  signin(data) {
-    return fetch(this.signin,
+  signin(email, password) {
+    return fetch(this.signinUrl,
       {
         method: 'POST',
         headers: {
@@ -75,21 +78,24 @@ export default class ApiBack {
         },
         mode: 'cors',
         credentials: 'include',
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          email,
+          password,
+        }),
       })
       .then((res) => {
         if (res.ok) {
           return res.json()
         }
-        throw new Error(`Error enter: ${res.status}`)
+        throw new Error(`Error enter: ${res.status} ${res.message}`)
       })
       .catch((err) => {
         throw new Error(err.message)
       })
   }
 
-  signup(data) {
-    return fetch(this.signup,
+  signup(email, password, name ) {
+    return fetch(this.signupUrl,
       {
         method: 'POST',
         headers: {
@@ -97,7 +103,11 @@ export default class ApiBack {
         },
         mode: 'cors',
         credentials: 'include',
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          password,
+          name,
+          email,
+        }),
       })
       .then((res) => {
         if (res.ok) {
@@ -110,8 +120,8 @@ export default class ApiBack {
       })
   }
 
-  saveArticle(data) {
-    return fetch(this.articles,
+  saveArticle(keyword, title, text, date, source, link, image) {
+    return fetch(this.articlesUrl,
       {
         method: 'POST',
         headers: {
@@ -119,7 +129,15 @@ export default class ApiBack {
         },
         mode: 'cors',
         credentials: 'include',
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          keyword,
+          title,
+          text,
+          date,
+          source,
+          link,
+          image,
+        }),
       })
       .then((res) => {
         if (res.ok) {
@@ -134,7 +152,7 @@ export default class ApiBack {
   }
 
   deleteArticle(id) {
-    return fetch(`${this.articles}/${id}`,
+    return fetch(`${this.articlesUrl}/${id}`,
       {
         method: 'DELETE',
         headers: {
