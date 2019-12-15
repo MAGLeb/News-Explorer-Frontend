@@ -21,10 +21,12 @@
           <ul class="menu__items">
             <li class="menu__item"><a href="./" class="menu__link menu__link_active">Главная</a></li>
             <li class="menu__item"><a href="./about" class="menu__link">О проекте</a></li>
-            <li class="menu__item"><a href="./articles" class="menu__link">Сохранённые статьи</a></li>
+            <li class="menu__item" id="link-to-save-articles"><a href="./articles" class="menu__link">Сохранённые статьи</a></li>
           </ul>
           <button class="menu__button">
-            Глебье-то
+            <div class="menu__name">
+              Авторизируйтесь
+            </div>
             <div class="menu__door menu__door_color_white"></div>
           </button>
         </div>
@@ -140,7 +142,7 @@
       </div>
     </div>
 
-    <div class="popup popup-reg popup_is-opened"> <!-- add to classList "popup_is-opened" -->
+    <div class="popup popup-reg"> <!-- add to classList "popup_is-opened" -->
       <div class="popup__content">
         <img src="<%=require('./images/popup/close.svg')%>" alt="Cross" class="popup__close">
         <h3 class="popup__title">Регистрация</h3>

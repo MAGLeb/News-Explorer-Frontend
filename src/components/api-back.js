@@ -9,12 +9,14 @@ export default class ApiBack {
     this.getInfoAboutMeUrl = getInfoAboutMe
     this.articlesUrl = articles
     this.logoutUrl = logout
+
+    this.logout = this.logout.bind(this)
   }
 
   logout() {
     return fetch(this.logoutUrl,
       {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -63,7 +65,7 @@ export default class ApiBack {
         }
         throw new Error(`Error info about user: ${res.status}`)
       })
-      .then((userInfo) => userInfo.user)
+      .then((userInfo) => userInfo.data.name)
       .catch((err) => {
         throw new Error(err.message)
       })
@@ -94,7 +96,7 @@ export default class ApiBack {
       })
   }
 
-  signup(email, password, name ) {
+  signup(email, password, name) {
     return fetch(this.signupUrl,
       {
         method: 'POST',

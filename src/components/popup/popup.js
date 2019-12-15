@@ -7,7 +7,9 @@ export default class Popup {
     this.button = this.popup.querySelector('.popup__button')
     this.error = this.popup.querySelector('.popup__error-top-of-button')
     this.form = this.popup.querySelector('form')
+    this.popupReg = document.querySelector('.popup-reg')
 
+    this.open = this.open.bind(this)
     this.close = this.close.bind(this)
     this.submit = this.submit.bind(this)
     this.openLink = this.openLink.bind(this)
@@ -27,7 +29,7 @@ export default class Popup {
 
   openLink() {
     this.close()
-    document.querySelector('.popup-reg').classList.add('popup_is-opened')
+    this.popupReg.classList.add('popup_is-opened')
   }
 
   submit() {
@@ -42,6 +44,13 @@ export default class Popup {
         this.form.elements.password.value = ''
         this.button.setAttribute('disabled', 'true')
         this.button.classList.remove('popup__button_is-active')
+        this.api.getInfoAboutMe()
+          .then((username) => {
+            localStorage.setItem('username', username)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
       })
       .catch((err) => {
         console.log(err)
