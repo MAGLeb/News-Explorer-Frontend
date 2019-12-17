@@ -1,9 +1,10 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-restricted-globals */
 export default class Popup {
-  constructor(popup, apiBack) {
+  constructor(popup, apiBack, validation) {
     this.popup = popup
     this.api = apiBack
+    this.validation = validation
     this.button = this.popup.querySelector('.popup__button')
     this.error = this.popup.querySelector('.popup__error-top-of-button')
     this.form = this.popup.querySelector('form')
@@ -21,6 +22,7 @@ export default class Popup {
 
   open() {
     this.popup.classList.add('popup_is-opened')
+    this.validation(this.popup.querySelector('.popup__form'))
   }
 
   close() {

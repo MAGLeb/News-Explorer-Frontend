@@ -13,11 +13,8 @@ const apiBack = new ApiBack({
 })
 
 const popupSuccess = new PopupSuccess(document.querySelector('.popup-success'))
-const popupEnter = new Popup(document.querySelector('.popup'), apiBack)
-const popupReg = new PopupReg(document.querySelector('.popup-reg'), apiBack, popupSuccess)
+const popupEnter = new Popup(document.querySelector('.popup'), apiBack, validation)
+const popupReg = new PopupReg(document.querySelector('.popup-reg'), apiBack, validation, popupSuccess)
 
 const header = new Header(apiBack, popupEnter)
-header.logStatus()
-
-validation(popupEnter.popup.querySelector('.popup__form'))
-validation(popupReg.popup.querySelector('.popup__form'))
+header.renderHeader()

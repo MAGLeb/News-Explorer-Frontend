@@ -5,10 +5,15 @@
 import Popup from './popup'
 
 export default class PopupReg extends Popup {
-  constructor(popup, apiBack, popupSuccess) {
-    super(popup, apiBack)
+  constructor(popup, apiBack, validation, popupSuccess) {
+    super(popup, apiBack, validation)
 
     this.popupSuccess = popupSuccess
+  }
+
+  open() {
+    this.popup.classList.add('popup_is-opened')
+    this.validation(this.popup.querySelector('.popup__form'))
   }
 
   openLink() {
