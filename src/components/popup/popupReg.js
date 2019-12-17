@@ -11,11 +11,6 @@ export default class PopupReg extends Popup {
     this.popupSuccess = popupSuccess
   }
 
-  open() {
-    this.popup.classList.add('popup_is-opened')
-    this.validation(this.popup.querySelector('.popup__form'))
-  }
-
   openLink() {
     this.close()
     document.querySelector('.popup').classList.add('popup_is-opened')

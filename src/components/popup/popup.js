@@ -18,11 +18,12 @@ export default class Popup {
     this.popup.querySelector('.popup__close').addEventListener('click', this.close)
     this.popup.querySelector('.popup__button').addEventListener('click', this.submit)
     this.popup.querySelector('.popup__under-link').addEventListener('click', this.openLink)
+
+    this.validation(this.form)
   }
 
   open() {
     this.popup.classList.add('popup_is-opened')
-    this.validation(this.popup.querySelector('.popup__form'))
   }
 
   close() {
@@ -49,6 +50,9 @@ export default class Popup {
         this.api.getInfoAboutMe()
           .then((username) => {
             localStorage.setItem('username', username)
+          })
+          .then(() => {
+            window.location.reload()
           })
           .catch((err) => {
             console.log(err)
