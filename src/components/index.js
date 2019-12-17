@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import ApiBack from './api-back'
 import {
   articles, signin, signup, logout, getInfoAboutMe

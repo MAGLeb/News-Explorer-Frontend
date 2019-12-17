@@ -51,36 +51,38 @@
       </div>
     </section>
 
-    <section class="preloader">
+    <section class="preloader preloader-off">
       <div class="preloader__spin"></div>
       <h6 class="preloader__load">Идет поиск новостей...</h6>
     </section>
 
-    <section class="nothing">
+    <section class="nothing nothing-off">
       <img class="nothing__image" src="<%= require('./images/nothing/not-found.svg') %>" alt="Nothing found">
       <h6 class="nothing__title">Ничего не найдено</h6>
       <p class="nothing__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
     </section>
 
-    <section class="results">
+    <section class="results results-off">
       <h3 class="results__title">Результаты поиска</h3>
       <div class="results__container">
-        <div class="card">
-          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
-          <div class="card__mark">
-            <div class="card__mark-save"></div>
-          </div>
-          <a class="card__link" href="#">
-            <img class="card__image" alt="New's image" src="<%= require('./images/cards/image_1.png') %>">
-            <div class="card__description">
-              <p class="card__data">2 августа, 2019</p>
-              <p class="card__title">Лесные огоньки: история одной фотографии</p>
-              <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
-                из местных чудес природы.</p>
-              <p class="card__author">Медуза</p>
+        <template id="card-template">
+          <div class="card">
+            <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+            <div class="card__mark">
+              <div class="card__mark-save"></div>
             </div>
-          </a>
-        </div>
+            <a class="card__link" href="#">
+              <img class="card__image" alt="New's image" src="<%= require('./images/cards/image_1.png') %>">
+              <div class="card__description">
+                <p class="card__data">2 августа, 2019</p>
+                <p class="card__title">Лесные огоньки: история одной фотографии</p>
+                <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+                  из местных чудес природы.</p>
+                <p class="card__author">Медуза</p>
+              </div>
+            </a>
+          </div>
+        </template>
       </div>
       <button class="results__button">Показать еще</button>
     </section>

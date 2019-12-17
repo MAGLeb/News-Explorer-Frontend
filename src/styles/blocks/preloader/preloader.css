@@ -14,6 +14,10 @@
 	overflow: hidden;
 }
 
+.preloader-off {
+  display: none;
+}
+
 @media screen and (max-width: 1023px) {
   .preloader {
     height: 222px;

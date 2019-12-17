@@ -40,7 +40,7 @@ export default function validation(form) {
           errors[2].classList.add('popup__error_is-active')
         } else if (item.value.length === 1) {
           errors[2].classList.add('popup__error_is-active')
-          errors[2].textContent = 'Имя должно быть от 2 до 30 символов'
+          errors[2].textContent = 'Имя должно быть от 2 до 12 символов'
         } else if (item.value.length <= 2) {
           errors[2].classList.remove('popup__error_is-active')
         }
