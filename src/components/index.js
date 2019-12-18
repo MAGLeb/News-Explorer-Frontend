@@ -1,13 +1,12 @@
-/* eslint-disable no-unused-vars */
-import ApiBack from './api-back'
+import ApiBack from './api/api-back'
 import {
   articles, signin, signup, logout, getInfoAboutMe
 } from './config'
-import validation from './validation'
+import validation from './validation/validation'
 import Popup from './popup/popup'
 import PopupReg from './popup/popupReg'
 import PopupSuccess from './popup/popupSuccess'
-import Header from './header'
+import Header from './header/header'
 
 const initUI = () => {
   const apiBack = new ApiBack({

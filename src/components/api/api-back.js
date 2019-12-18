@@ -153,7 +153,7 @@ export default class ApiBack {
           'Content-Type': 'application/json'
         },
         mode: 'cors',
-        credentials: 'incude',
+        credentials: 'include',
       })
       .then((res) => {
         if (res.ok) {

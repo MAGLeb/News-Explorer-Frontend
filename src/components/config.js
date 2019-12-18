@@ -8,9 +8,21 @@ const logout = 'https://api.news-discoverer.ml/logout'
 const gitUrl = 'https://api.github.com/repos/MAGLeb/News-Explorer-Frontend/commits'
 const maxGitCommits = 15
 const month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+const normalAbout = {
+  title: 'About Glebas',
+  first: 'Glebas is a young ambitious guy. Glebas loves to study, think, and discuss. Glebas is engaged in chess and yoga in his free time. Glebas studies at the university, although he understands little.',
+  second: "Glebas is also mastering the university bachelor's program himself. Glebas is interested in mathematics. Especially when Glebas understands it. Glebas realized that everything was built on algorithms. Glebas evolve algorithmic thinking. Here is such Glebas."
+}
+const about = {
+  title: 'Об Авторе',
+  first: 'Привет, меня зовут Глеб. Я прошёл курсы веб-разработчика в Яндекс.Практикум, где изучил HTML, CSS, JavaScript, Node.js и основы работы с MongoDB.',
+  second: 'За время обучения я выполнил несколько проектов по адаптивной верстке, работе с пользователями, асинхронным запросам к серверу, построению RESTful API, написанию серверного кода и многому другому.'
+}
 
 module.exports = {
   publicNewsUrl,
+  normalAbout,
+  about,
   gitUrl,
   maxGitCommits,
   month,

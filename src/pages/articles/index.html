@@ -27,7 +27,7 @@
             <div class="menu__name">
               Авторизируйтесь
             </div>
-            <div class="menu__door menu__door_color_white"></div>
+            <div class="menu__door menu__door_color_black"></div>
           </button>
         </div>
       </div>
@@ -35,34 +35,36 @@
 
     <section class="topic">
       <p class="topic__mini">Сохранённые статьи</p>
-      <h2 class="topic__title">Глебье-то, у вас 5 сохранённых статей</h2>
-      <div class="topic__keys">
-        <p class="topic__key">По ключевым словам:</p>
-        <p class="topic__key_bold">Природа, Тайга</p>
-        <p class="topic__key">и</p>
-        <p class="topic__key_bold">2 другим</p>
-      </div>
+      <h2 class="topic__title">, у вас <span id="amount-cards"></span> сохранённых статей</h2>
+      <p class="topic__keywords">По ключевым словам:
+        <b><span class="topic__first"></span><span class="topic__second"></span></b>
+        <span class="topic__last"> и
+          <b><span class="topic__more"></span> другим</b>
+        </span>
+      </p>
     </section>
 
     <section class="results">
       <div class="results__container">
-        <div class="card">
-          <div class="card__mark-del">
-            <div class="card__mark-del-trash"></div>
-            <div class="card__popup-remove">Убрать из сохранённых</div>
-          </div>
-          <div class="card__key">Природа</div>
-          <a class="card__link" href="#">
-            <img class="card__image" alt="New's image" src="../<%= require('../../images/cards/image_1.png') %>">
-            <div class="card__description">
-              <p class="card__data">2 августа, 2019</p>
-              <p class="card__title">Лесные огоньки: история одной фотографии</p>
-              <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
-                из местных чудес природы.</p>
-              <p class="card__author">Медуза</p>
+        <template id="card-template-save">
+          <div class="card">
+            <div class="card__mark-del">
+              <div class="card__mark-del-trash"></div>
+              <div class="card__popup-remove">Убрать из сохранённых</div>
             </div>
-          </a>
-        </div>
+            <div class="card__key">Природа</div>
+            <a class="card__link" href="#">
+              <div class="card__image"></div>
+              <div class="card__description">
+                <p class="card__data">2 августа, 2019</p>
+                <p class="card__title">Лесные огоньки: история одной фотографии</p>
+                <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+                  из местных чудес природы.</p>
+                <p class="card__author">Медуза</p>
+              </div>
+            </a>
+          </div>
+        </template>
       </div>
     </section>
 

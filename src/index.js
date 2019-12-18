@@ -1,12 +1,14 @@
 /* eslint-disable no-unused-vars */
 import './style.css'
 import initUI from './components/index'
-import { publicNewsUrl, month } from './components/config'
-import RenderNews from './components/render-news'
-import ApiNews from './components/api-news'
+import { publicNewsUrl, month, normalAbout } from './components/config'
+import About from './components/about/about'
+import RenderNews from './components/cards/render-cards'
+import ApiNews from './components/api/api-news'
 
 const pageUI = initUI()
 
+const renderAbout = new About(normalAbout)
 const apiNews = new ApiNews(publicNewsUrl)
 
 const newsRender = new RenderNews(

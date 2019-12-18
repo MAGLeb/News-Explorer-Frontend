@@ -12,8 +12,10 @@ export default class ApiNews {
     const url = `${this.publicNewsUrl}&q=${keys}&from=${dateFrom}&to=${dateTo}`
     return fetch(url)
       .then((res) => {
-        if (!res.ok) throw new Error('Something went wrong')
-        return res.json()
+        if (res.ok) {
+          return res.json()
+        }
+        throw new Error('Something went wrong')
       })
       .then((data) => {
         const news = []
