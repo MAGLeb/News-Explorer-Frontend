@@ -9,13 +9,25 @@ import PopupReg from './popup/popupReg'
 import PopupSuccess from './popup/popupSuccess'
 import Header from './header'
 
-const apiBack = new ApiBack({
-  articles, signin, signup, logout, getInfoAboutMe
-})
+const initUI = () => {
+  const apiBack = new ApiBack({
+    articles, signin, signup, logout, getInfoAboutMe
+  })
 
-const popupSuccess = new PopupSuccess(document.querySelector('.popup-success'))
-const popupEnter = new Popup(document.querySelector('.popup'), apiBack, validation)
-const popupReg = new PopupReg(document.querySelector('.popup-reg'), apiBack, validation, popupSuccess)
+  const popupSuccess = new PopupSuccess(document.querySelector('.popup-success'))
+  const popupEnter = new Popup(document.querySelector('.popup'), apiBack, validation)
+  const popupReg = new PopupReg(document.querySelector('.popup-reg'), apiBack, validation, popupSuccess)
 
-const header = new Header(apiBack, popupEnter)
-header.renderHeader()
+  const header = new Header(apiBack, popupEnter)
+  header.renderHeader()
+
+  return {
+    apiBack,
+    header,
+    popupEnter,
+    popupReg,
+    popupSuccess
+  }
+}
+
+export default initUI

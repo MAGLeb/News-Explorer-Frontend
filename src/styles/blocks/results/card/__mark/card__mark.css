@@ -8,36 +8,26 @@
   top: 24px;
   right: 24px;
 
-  background: #FFFFFF;
+  background: url('../../../../../images/cards/mark.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+
   width: 40px;
   height: 40px;
   border-radius: 8px;
 }
 
-.card__mark-saved {
-  width: 14px;
-  height: 19px;
+.card__mark_logged:hover {
+  background: url('../../../../../images/cards/mark_hover.svg');
+}
+
+.card__mark_saved {
   background: url('../../../../../images/cards/mark_saved.svg');
-  background-size: 100%;
-  background-repeat: no-repeat;
 }
 
-.card__mark:hover .card__mark-saved {
-  transition: 1ms;
-  width: 16px;
-  height: 21px;
-}
-
-.card__mark-save {
-  width: 14px;
-  height: 19px;
-  mask: url('../../../../../images/cards/mark.svg');
-  mask-size: cover;
-  background: #B6BCBF;
-}
-
-.card__mark:hover .card__mark-logged.card__mark-save {
-  background: #1A1B22;
+.card__mark_saved:hover {
+  background: url('../../../../../images/cards/mark_saved.svg');
 }
 
 @media screen and (max-width: 1023px) {

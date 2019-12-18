@@ -67,12 +67,10 @@
       <div class="results__container">
         <template id="card-template">
           <div class="card">
+            <div class="card__mark"></div>
             <div class="card__popup">Войдите, чтобы сохранять статьи</div>
-            <div class="card__mark">
-              <div class="card__mark-save"></div>
-            </div>
             <a class="card__link" href="#">
-              <img class="card__image" alt="New's image" src="<%= require('./images/cards/image_1.png') %>">
+              <div class="card__image"></div>
               <div class="card__description">
                 <p class="card__data">2 августа, 2019</p>
                 <p class="card__title">Лесные огоньки: история одной фотографии</p>

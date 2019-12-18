@@ -9,6 +9,7 @@
 @import url('./__mark/card__mark-del.css');
 @import url('./__link/card__link.css');
 @import url('./__popup/card__popup-remove.css');
+@import url('./__image/card__image.css');
 
 .card {
   position: relative;

@@ -1,7 +1,17 @@
+/* eslint-disable no-unused-vars */
 import './style.css'
-import './components/index'
-import { publicNewsUrl } from './components/config'
+import initUI from './components/index'
+import { publicNewsUrl, month } from './components/config'
+import RenderNews from './components/render-news'
 import ApiNews from './components/api-news'
 
+const pageUI = initUI()
+
 const apiNews = new ApiNews(publicNewsUrl)
-apiNews.getInitNews()
+
+const newsRender = new RenderNews(
+  apiNews.initNews.bind(apiNews),
+  pageUI.apiBack.saveArticle.bind(pageUI.apiBack),
+  pageUI.apiBack.deleteArticle.bind(pageUI.apiBack),
+  month,
+)

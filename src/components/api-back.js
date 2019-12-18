@@ -122,7 +122,7 @@ export default class ApiBack {
       })
   }
 
-  saveArticle(keyword, title, text, date, source, link, image) {
+  saveArticle(data) {
     return fetch(this.articlesUrl,
       {
         method: 'POST',
@@ -131,15 +131,7 @@ export default class ApiBack {
         },
         mode: 'cors',
         credentials: 'include',
-        body: JSON.stringify({
-          keyword,
-          title,
-          text,
-          date,
-          source,
-          link,
-          image,
-        }),
+        body: JSON.stringify(data),
       })
       .then((res) => {
         if (res.ok) {
@@ -147,7 +139,7 @@ export default class ApiBack {
         }
         throw new Error(`Error save card ${res.status}`)
       })
-      .then((res) => res._id)
+      .then((res) => res.data.article._id)
       .catch((err) => {
         throw new Error(err.message)
       })

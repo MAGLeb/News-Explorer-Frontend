@@ -4,7 +4,7 @@ export default class ApiNews {
     this.publicNewsUrl = publicNewsUrl
   }
 
-  getInitNews(keys) {
+  initNews(keys) {
     const dateNow = new Date()
     const dateMinusWeek = new Date(dateNow - 7 * 24 * 3600 * 1000)
     const dateTo = `${dateNow.getFullYear()}-${dateNow.getMonth() + 1}-${dateNow.getDate()}`

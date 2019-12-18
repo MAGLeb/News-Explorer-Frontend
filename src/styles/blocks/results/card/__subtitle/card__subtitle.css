@@ -6,12 +6,16 @@
   line-height: 22px;
 
   display: block;
-  max-height: 130px;
+  height: auto;
   text-overflow: ellipsis;
   overflow: hidden;
   color: #1a2b1a;
 
-  margin: 16px 0 40px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+
+  margin: 16px 10px 0 0;
 }
 
 @media screen and (max-width: 1023px) {
