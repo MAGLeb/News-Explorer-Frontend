@@ -1,18 +1,20 @@
+/* eslint-disable no-else-return */
 /* eslint-disable class-methods-use-this */
 export default class NewsRender {
-  constructor(getNews, saveArticle, deleteArticle, month) {
+  constructor(getNews, saveArticle, deleteArticle, month, countOfCardsOnPage) {
     this.getNews = getNews
-
     this._news = []
     this._currentPos = 0
     this.month = month
     this.saveArticle = saveArticle
     this.deleteArticle = deleteArticle
+    this.countOfCardsOnPage = countOfCardsOnPage
 
     this.cardTemplate = document.querySelector('#card-template').content
     this._resultsSection = document.querySelector('.results')
     this._resultsField = document.querySelector('.results__container')
     this._searchInput = document.querySelector('.main__input')
+    this._searchButton = document.querySelector('.main__button')
     this._submit = document.querySelector('.main__search')
     this._mainButton = document.querySelector('.results__button')
     this._notFound = document.querySelector('.nothing')
@@ -26,8 +28,8 @@ export default class NewsRender {
   _renderCards() {
     const container = document.createDocumentFragment()
     const delta = this._news.length - this._currentPos
-    const quantati = delta < 3 ? delta : 3
-    if (delta <= 3) this._mainButton.classList.add('results__button-off')
+    const quantati = delta < this.countOfCardsOnPage ? delta : this.countOfCardsOnPage
+    if (delta <= this.countOfCardsOnPage) this._mainButton.classList.add('results__button-off')
     for (let i = 0; i < quantati; i += 1) {
       container.appendChild(this._createCard(this._news[this._currentPos]))
       this._currentPos += 1
@@ -75,12 +77,24 @@ export default class NewsRender {
     this._searchInput.setAttribute('placeholder', 'Введите тему новости')
   }
 
+  _blockForm() {
+    this._searchInput.setAttribute('disabled', true)
+    this._searchButton.setAttribute('disabled', true)
+  }
+
+  _unblockForm() {
+    this._searchInput.removeAttribute('disabled', true)
+    this._searchButton.removeAttribute('disabled', true)
+  }
+
   search(event) {
     event.preventDefault()
     const key = this._searchInput.value.replace(/^\s+/, '')
     if (key.length === 0) {
       this.showError()
       return
+    } else {
+      this.hideError()
     }
     this._resultsSection.classList.add('results-off')
     this._notFound.classList.add('nothing-off')
@@ -89,6 +103,7 @@ export default class NewsRender {
     if (this._news.length !== 0) {
       this._clearResultsList()
     }
+    this._blockForm()
     this.getNews(key)
       .then((data) => {
         this._news = data
@@ -99,11 +114,13 @@ export default class NewsRender {
           this._renderCards()
           this._resultsSection.classList.remove('results-off')
         }
+        this._unblockForm()
       })
       .catch((err) => {
         console.log(err.message)
         this._notFound.classList.add('nothing-off')
         this._preloader.classList.add('preloader-off')
+        this._unblockForm()
       })
   }
 

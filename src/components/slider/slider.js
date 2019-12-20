@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import Flickity from 'flickity'
-import DownloadCommits from './download-commits'
+import DownloadCommits from '../api/api-git'
 import RenderCommits from './render-commits'
 import { month, gitUrl, maxGitCommits } from '../config'
 

@@ -2,18 +2,19 @@
 /* eslint-disable no-useless-constructor */
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-restricted-globals */
-import Popup from './popup'
+import Popup from './popupEnter'
 
 export default class PopupReg extends Popup {
   constructor(popup, apiBack, validation, popupSuccess) {
     super(popup, apiBack, validation)
 
     this.popupSuccess = popupSuccess
+    this.popupEnter = document.querySelector('.popup')
   }
 
   openLink() {
     this.close()
-    document.querySelector('.popup').classList.add('popup_is-opened')
+    this.popupEnter.classList.add('popup_is-opened')
   }
 
   submit() {

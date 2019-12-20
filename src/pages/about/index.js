@@ -5,7 +5,8 @@ import initSlider from '../../components/slider/slider'
 import About from '../../components/about/about'
 import { normalAbout } from '../../components/config'
 
-const renderAbout = new About(normalAbout)
+const about = new About(normalAbout)
+about.renderAbout()
 
 const pageUI = initUI()
 const pageSlider = initSlider()

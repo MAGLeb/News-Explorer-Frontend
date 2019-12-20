@@ -7,6 +7,9 @@ const articles = 'https://api.news-discoverer.ml/articles'
 const logout = 'https://api.news-discoverer.ml/logout'
 const gitUrl = 'https://api.github.com/repos/MAGLeb/News-Explorer-Frontend/commits'
 const maxGitCommits = 15
+const timeInMilSecWeek = 7 * 24 * 3600 * 1000
+const countOfCardsOnPage = 3
+const countOfKeys = 3
 const month = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
 const normalAbout = {
   title: 'About Glebas',
@@ -21,6 +24,9 @@ const about = {
 
 module.exports = {
   publicNewsUrl,
+  countOfCardsOnPage,
+  timeInMilSecWeek,
+  countOfKeys,
   normalAbout,
   about,
   gitUrl,

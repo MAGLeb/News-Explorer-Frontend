@@ -5,8 +5,6 @@ export default class About {
     this.secondSub = document.querySelector('.author__second')
 
     this.text = text
-
-    this.renderAbout()
   }
 
   renderAbout() {

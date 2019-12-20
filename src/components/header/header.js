@@ -11,6 +11,10 @@ export default class Header {
     this.button = document.querySelector('.menu__button')
     this.buttonName = document.querySelector('.menu__name')
 
+    this.menu = document.querySelector('.menu')
+    this.content = document.querySelector('.header__content')
+    this.background = document.querySelector('.header__background')
+
     this.toggleMenu = this.toggleMenu.bind(this)
     this.renderHeader = this.renderHeader.bind(this)
     this.logout = this.logout.bind(this)
@@ -50,13 +54,9 @@ export default class Header {
 
 
   toggleMenu() {
-    const menu = document.querySelector('.menu')
-    const content = document.querySelector('.header__content')
-    const background = document.querySelector('.header__background')
-
-    background.classList.toggle('header__background_state_active')
-    content.classList.toggle('header__content_state_active')
-    menu.classList.toggle('menu_state_active')
+    this.background.classList.toggle('header__background_state_active')
+    this.content.classList.toggle('header__content_state_active')
+    this.menu.classList.toggle('menu_state_active')
 
     this.icon.classList.toggle('header__icon-close')
   }

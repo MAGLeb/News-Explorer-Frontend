@@ -14,12 +14,24 @@ export default class Popup {
     this.close = this.close.bind(this)
     this.submit = this.submit.bind(this)
     this.openLink = this.openLink.bind(this)
+    this.checkToClose = this.checkToClose.bind(this)
 
     this.popup.querySelector('.popup__close').addEventListener('click', this.close)
     this.popup.querySelector('.popup__button').addEventListener('click', this.submit)
     this.popup.querySelector('.popup__under-link').addEventListener('click', this.openLink)
+    window.addEventListener('keydown', this.checkToClose)
+    window.addEventListener('click', this.checkToClose)
 
     this.validation(this.form)
+  }
+
+  checkToClose(e) {
+    if (e.key === 'Escape') {
+      this.close()
+    }
+    if (e.target.classList.contains('popup') && e.target.classList.contains('popup_is-opened')) {
+      this.close()
+    }
   }
 
   open() {

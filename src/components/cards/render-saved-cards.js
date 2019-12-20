@@ -1,20 +1,27 @@
 /* eslint-disable no-param-reassign */
 /* eslint-disable class-methods-use-this */
 export default class RenderSaveNews {
-  constructor(getAllArticles, deleteArticle, month) {
+  constructor(getAllArticles, deleteArticle, month, countOfKeys, countOfCardsOnPage) {
     this.month = month
     this.getAllArticles = getAllArticles
     this.deleteArticle = deleteArticle
 
+    this.countOfCardsOnPage = countOfCardsOnPage
+    this.countOfKeys = countOfKeys
+
     this._cardTemplate = document.querySelector('#card-template-save').content
     this._collectionContainer = document.querySelector('.results__container')
+
+    this._topicFirst = document.querySelector('.topic__first')
+    this._topicSecond = document.querySelector('.topic__second')
+    this._topicLast = document.querySelector('.topic__last')
+    this._topicMore = document.querySelector('.topic__more')
 
     this._articlesQty = document.querySelector('#amount-cards')
     this._articlesHeader = document.querySelector('.topic__title')
     this._stats = {}
 
     this._collectionContainer.addEventListener('click', (event) => this._handleArticle(event))
-    this.render()
   }
 
   render() {
@@ -62,7 +69,7 @@ export default class RenderSaveNews {
       }
     })
     const total = Array.from(Object.keys(theKeys)).length
-    const turns = total >= 3 ? 3 : total
+    const turns = total >= this.countOfCardsOnPage ? this.countOfCardsOnPage : total
     for (let i = 0; i < turns; i += 1) {
       Array.from(Object.keys(theKeys)).forEach((item) => {
         if (popular.max < theKeys[item]) {
@@ -86,16 +93,16 @@ export default class RenderSaveNews {
     this._articlesQty.textContent = `${Array.from(Object.keys(this._stats)).length}`
     const keywords = this._keywordCount()
 
-    document.querySelector('.topic__first').textContent = keywords.total >= 1 ? keywords.popular.shift() : ''
+    this._topicFirst.textContent = keywords.total >= 1 ? keywords.popular.shift() : ''
     let tagLine = ''
-    if (keywords.total === 3) {
+    if (keywords.total === this.countOfKeys) {
       tagLine = `, ${keywords.popular.shift()}, ${keywords.popular.shift()}`
     } else {
       tagLine = keywords.total <= 1 ? '' : `, ${keywords.popular.shift()}`
     }
-    document.querySelector('.topic__second').textContent = tagLine
-    document.querySelector('.topic__last').style.display = keywords.total > 3 ? 'auto' : 'none'
-    document.querySelector('.topic__more').textContent = keywords.total - 2
+    this._topicSecond.textContent = tagLine
+    this._topicLast.style.display = keywords.total > this.countOfKeys ? 'auto' : 'none'
+    this._topicMore.textContent = keywords.total - 2
   }
 
   _handleArticle(event) {

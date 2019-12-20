@@ -3,7 +3,7 @@ import {
   articles, signin, signup, logout, getInfoAboutMe
 } from './config'
 import validation from './validation/validation'
-import Popup from './popup/popup'
+import Popup from './popup/popupEnter'
 import PopupReg from './popup/popupReg'
 import PopupSuccess from './popup/popupSuccess'
 import Header from './header/header'
