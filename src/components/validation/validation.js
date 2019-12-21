@@ -36,13 +36,13 @@ export default function validation(form) {
 
       if (item.name === 'name') {
         if (item.value === '') {
-          errors[2].textContent = 'Это обязательное поле'
-          errors[2].classList.add('popup__error_is-active')
+          errors[index].textContent = 'Это обязательное поле'
+          errors[index].classList.add('popup__error_is-active')
         } else if (item.value.length === 1) {
-          errors[2].classList.add('popup__error_is-active')
-          errors[2].textContent = 'Имя должно быть от 2 до 12 символов'
+          errors[index].classList.add('popup__error_is-active')
+          errors[index].textContent = 'Имя должно быть от 2 до 12 символов'
         } else if (item.value.length <= 2) {
-          errors[2].classList.remove('popup__error_is-active')
+          errors[index].classList.remove('popup__error_is-active')
         }
       }
 
