@@ -1,19 +1,14 @@
 .menu__button {
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   border: 1px solid;
   border-color: #B6BCBF;
   border-radius: 100px;
 
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
-
   box-sizing: border-box;
   background: transparent;
-  color: var(--header-color-inside);
 
   padding: 10px 20px;
 }

@@ -17,11 +17,11 @@
   color: white;
 }
 
-.main__button:hover {
+.button:hover {
   background: #347EFF;
 }
 
-.main__button:active {
+.button:active {
   background: #2A65CC;
 }
 

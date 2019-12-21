@@ -17,11 +17,13 @@
 .card__mark-del-trash {
   width: 24px;
   height: 24px;
-  background: url('../../../../../images/cards/trash.svg');
+  mask: url('../../../../../images/cards/trash.svg');
+  mask-size: cover;
+  background: #B6BCBF;
 }
 
 .card__mark-del:hover .card__mark-del-trash {
-  background: url('../../../../../images/cards/trash_hover.svg');
+  background: #1A1B22;
 }
 
 @media screen and (max-width: 1023px) {

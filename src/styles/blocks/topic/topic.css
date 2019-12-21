@@ -1,6 +1,6 @@
 @import url('./__title/topic__title.css');
 @import url('./__mini/topic__mini.css');
-@import url('./__keys/topic__keys.css');
+@import url('./__keywords/topic__keywords.css');
 
 .topic {
   display: flex;

@@ -20,6 +20,10 @@
   opacity: 0.9;
 }
 
+.results__button-off {
+  display: none;
+}
+
 @media screen and (max-width: 1023px) {
   .results__button {
     width: 240px;

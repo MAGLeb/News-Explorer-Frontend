@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
 
   height: 40px;
   padding: 0 10px;
@@ -20,6 +21,12 @@
   color: #000000;
 
   border-radius: 10px;
+}
+
+.card__mark:hover~.card__popup.card__popup_notlog {
+  opacity: 1;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 @media screen and (max-width: 1023px) {

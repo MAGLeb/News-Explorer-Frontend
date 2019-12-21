@@ -16,15 +16,17 @@
       <div class="header__background"></div>
       <div class="header__content">
         <a href="../" class="header__logo">NewsDiscoverer</a>
-        <div class="header__icon header__icon_color_black"></div>
+        <div class="header__icon"></div>
         <div class="menu">
           <ul class="menu__items">
             <li class="menu__item"><a href="../" class="menu__link">Главная</a></li>
             <li class="menu__item"><a href="../about" class="menu__link menu__link_active">О проекте</a></li>
-            <li class="menu__item"><a href="../articles" class="menu__link">Сохранённые статьи</a></li>
+            <li class="menu__item" id="link-to-save-articles"><a href="../articles" class="menu__link">Сохранённые статьи</a></li>
           </ul>
           <button class="menu__button">
-            Глебье-то
+            <div class="menu__name">
+              Авторизируйтесь
+            </div>
             <div class="menu__door menu__door_color_black"></div>
           </button>
         </div>
@@ -33,31 +35,30 @@
 
     <section class="clients">
       <div class="clients__main">
-        <h2 class="clients__title">Клиентам</h2>
+        <h2 class="clients__title">Людям</h2>
         <p class="clients__subtitle">
-            Этот сайт — дипломный проект студента Яндекс.Практикума.
-            Его цель — показать, чему научился студент, какими технологиями владеет.
+          Этот сайт — мой первый полноценный проект.
+          Цель это проекта — показать, что я умею, какими технологиями владею.
+          Его можно разделить на три основные части:
         </p>
         <p class="clients__subtitle">
-            Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым.
-            Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах,
-            выполненных по другим методологиям. Также сайт проще и дешевле поддерживать.
+          1). Первая часть - серверный код. В нём реализована функциональность регистрации
+          и входа в систему через JWT. Сайт использует публичный API и позволяет искать новости за прошедшую неделю и сохранять понравившиеся в личном кабинете.
+          Избранные новости хранятся в базе данных Mongo DB на сервере. Этот сервер является отказоустойчивым и безопасным.
         </p>
         <p class="clients__subtitle">
-            Студент самостоятельно написал серверный код. В нём реализована функциональность регистрации
-            и входа в систему. Сайт позволяет искать новости за прошедшую неделю и сохранять понравившиеся в личном кабинете.
-            На сервере избранные новости хранятся в базе данных Mongo DB. Студент запрограммировал надёжный сервер:
-            отказоустойчивый и безопасный.
+          2). Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым.
+          Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах,
+          выполненных по другим методологиям. Также сайт проще, дешевле поддерживать и он адаптивен под любые устройства.
         </p>
         <p class="clients__subtitle">
-            При создании проекта была использована сборка технологией Webpack.
-            Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее.
-            Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем,
-            у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.
+          3). И естественно JavaScript, что оживить его и реализовать взаимодействие с публичными API и API собственного сервера. При создании проекта была использована сборка технологией Webpack.
+          Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее.
+          Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем,
+          у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.
         </p>
         <p class="clients__subtitle">
-            Проект был проверен экспертами Яндекс.Практикума. Если вашему бизнесу нужен сайт,
-            мы рекомендуем обратиться к этому студенту.
+
         </p>
       </div>
     </section>
@@ -88,11 +89,11 @@
       <img class="author__photo" src="../<%= require('../../images/authors/author1.jpg')%>" alt="Gleb Maximov">
       <div class="author__description">
         <h2 class="author__title">Об авторе</h2>
-        <p class="author__subtitle">
+        <p class="author__subtitle author__first">
           Это блок с описанием автора проекта. Здесь следует указать, как вас зовут,
           чем вы занимаетесь, какими технологиями разработки владеете.
         </p>
-        <p class="author__subtitle">
+        <p class="author__subtitle author__second">
           Также можно рассказать о процессе обучения в Практикуме,
           чему вы тут научились, и чем можете помочь потенциальным заказчикам.
         </p>
@@ -105,141 +106,23 @@
         <a class="history__title-link" href="https://github.com/MAGLeb">Открыть в GitHub ></a>
       </div>
       <div class="slider">
-        <div class="slider__cell">
-          <p class="slider__data">14 августа, 2019</p>
-          <div class="slider__main">
-            <img class="slider__image" src="../<%= require('../../images/flickity/photo.png')%>" alt="GitHub's user photo">
-            <div class="slider__about">
-              <h4 class="slider__name">Yong Feng</h4>
-              <p class="slider__email">yong_feng@gmail.com</p>
+
+        <!-- Привер верстки ItemCommit -->
+
+        <template id="commit-template">
+          <div class="slider__cell">
+            <p class="slider__data"></p>
+            <div class="slider__main">
+              <img class="slider__image" src="../<%= require('../../images/flickity/profile.jpg')%>" alt="GitHub's user photo">
+              <div class="slider__about">
+                <h4 class="slider__name"></h4>
+                <p class="slider__email"></p>
+              </div>
             </div>
+            <p class="slider__view"></p>
           </div>
-          <p class="slider__view">
-            With Emmet, you can type CSS-like expressions
-            that can be dynamically parsed, and produce
-            output depending on what you type in the abb...
-          </p>
-        </div>
-        <div class="slider__cell">
-          <p class="slider__data">14 августа, 2019</p>
-          <div class="slider__main">
-            <img class="slider__image" src="../<%= require('../../images/flickity/photo.png')%>" alt="GitHub's user photo">
-            <div class="slider__about">
-              <h4 class="slider__name">Yong Feng</h4>
-              <p class="slider__email">yong_feng@gmail.com</p>
-            </div>
-          </div>
-          <p class="slider__view">
-            With Emmet, you can type CSS-like expressions
-            that can be dynamically parsed, and produce
-            output depending on what you type in the abb...
-          </p>
-        </div>
-        <div class="slider__cell">
-          <p class="slider__data">14 августа, 2019</p>
-          <div class="slider__main">
-            <img class="slider__image" src="../<%= require('../../images/flickity/photo.png')%>" alt="GitHub's user photo">
-            <div class="slider__about">
-              <h4 class="slider__name">Yong Feng</h4>
-              <p class="slider__email">yong_feng@gmail.com</p>
-            </div>
-          </div>
-          <p class="slider__view">
-            With Emmet, you can type CSS-like expressions
-            that can be dynamically parsed, and produce
-            output depending on what you type in the abb...
-          </p>
-        </div>
-        <div class="slider__cell">
-          <p class="slider__data">14 августа, 2019</p>
-          <div class="slider__main">
-            <img class="slider__image" src="../<%= require('../../images/flickity/photo.png')%>" alt="GitHub's user photo">
-            <div class="slider__about">
-              <h4 class="slider__name">Yong Feng</h4>
-              <p class="slider__email">yong_feng@gmail.com</p>
-            </div>
-          </div>
-          <p class="slider__view">
-            With Emmet, you can type CSS-like expressions
-            that can be dynamically parsed, and produce
-            output depending on what you type in the abb...
-          </p>
-        </div>
-        <div class="slider__cell">
-          <p class="slider__data">14 августа, 2019</p>
-          <div class="slider__main">
-            <img class="slider__image" src="../<%= require('../../images/flickity/photo.png')%>" alt="GitHub's user photo">
-            <div class="slider__about">
-              <h4 class="slider__name">Yong Feng</h4>
-              <p class="slider__email">yong_feng@gmail.com</p>
-            </div>
-          </div>
-          <p class="slider__view">
-            With Emmet, you can type CSS-like expressions
-            that can be dynamically parsed, and produce
-            output depending on what you type in the abb...
-          </p>
-        </div>
-        <div class="slider__cell">
-          <p class="slider__data">14 августа, 2019</p>
-          <div class="slider__main">
-            <img class="slider__image" src="../<%= require('../../images/flickity/photo.png')%>" alt="GitHub's user photo">
-            <div class="slider__about">
-              <h4 class="slider__name">Yong Feng</h4>
-              <p class="slider__email">yong_feng@gmail.com</p>
-            </div>
-          </div>
-          <p class="slider__view">
-            With Emmet, you can type CSS-like expressions
-            that can be dynamically parsed, and produce
-            output depending on what you type in the abb...
-          </p>
-        </div>
-        <div class="slider__cell">
-          <p class="slider__data">14 августа, 2019</p>
-          <div class="slider__main">
-            <img class="slider__image" src="../<%= require('../../images/flickity/photo.png')%>" alt="GitHub's user photo">
-            <div class="slider__about">
-              <h4 class="slider__name">Yong Feng</h4>
-              <p class="slider__email">yong_feng@gmail.com</p>
-            </div>
-          </div>
-          <p class="slider__view">
-            With Emmet, you can type CSS-like expressions
-            that can be dynamically parsed, and produce
-            output depending on what you type in the abb...
-          </p>
-        </div>
-        <div class="slider__cell">
-          <p class="slider__data">14 августа, 2019</p>
-          <div class="slider__main">
-            <img class="slider__image" src="../<%= require('../../images/flickity/photo.png')%>" alt="GitHub's user photo">
-            <div class="slider__about">
-              <h4 class="slider__name">Yong Feng</h4>
-              <p class="slider__email">yong_feng@gmail.com</p>
-            </div>
-          </div>
-          <p class="slider__view">
-            With Emmet, you can type CSS-like expressions
-            that can be dynamically parsed, and produce
-            output depending on what you type in the abb...
-          </p>
-        </div>
-        <div class="slider__cell">
-          <p class="slider__data">14 августа, 2019</p>
-          <div class="slider__main">
-            <img class="slider__image" src="../<%= require('../../images/flickity/photo.png')%>" alt="GitHub's user photo">
-            <div class="slider__about">
-              <h4 class="slider__name">Yong Feng</h4>
-              <p class="slider__email">yong_feng@gmail.com</p>
-            </div>
-          </div>
-          <p class="slider__view">
-            With Emmet, you can type CSS-like expressions
-            that can be dynamically parsed, and produce
-            output depending on what you type in the abb...
-          </p>
-        </div>
+        </template>
+
       </div>
       <a class="history__button" href="https://github.com/MAGLeb">Открыть в GitHub</a>
     </section>
@@ -262,8 +145,66 @@
     </footer>
   </div>
 
+  <div class="service-area">
+    <div class="popup"> <!-- add to classList "popup_is-opened" -->
+      <div class="popup__content">
+        <img src="<%=require('../../images/popup/close.svg')%>" alt="Cross" class="popup__close">
+        <h3 class="popup__title">Вход</h3>
+        <form class="popup__form" name="enter">
+          <p class="popup__field">Email</p>
+          <input required type="text" name="email" class="popup__input popup__input_type_name" placeholder="Введите почту">
+          <div class="popup__errors popup__error">Неправильный формат email</div>
+          <p class="popup__field">Пароль</p>
+          <input required type="password" name="password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
+          <div class="popup__errors popup__error">Пароль не менее 8 символов</div>
+          <div class="popup__bottom">
+            <div class="popup__errors popup__error-top-of-button">Неправильный логин или пароль</div>
+            <button type="submit" class="popup__button" disabled>Войти</button>
+          </div>
+        </form>
+        <div class="popup__under">
+            <p class="popup__under-or">или</p>
+            <p class="popup__under-link">Зарегистрироваться</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup-reg"> <!-- add to classList "popup_is-opened" -->
+      <div class="popup__content">
+        <img src="<%=require('../../images/popup/close.svg')%>" alt="Cross" class="popup__close">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form" name="new">
+          <p class="popup__field">Email</p>
+          <input required type="text" name="email" class="popup__input popup__input_type_name" placeholder="Введите почту">
+          <div class="popup__errors popup__error">Неправильный формат email</div>
+          <p class="popup__field">Пароль</p>
+          <input required type="password" name="password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
+          <div class="popup__errors popup__error popup__error-margin">Пароль не менее 8 символов</div>
+          <p class="popup__field">Имя</p>
+          <input required type="text" name="name" class="popup__input popup__input_type_link-url" placeholder="Введите своё имя">
+          <div class="popup__errors popup__error">Имя должно быть от 2 до 30 символов</div>
+          <div class="popup__bottom">
+            <div class="popup__errors popup__error-top-of-button">Такой пользователь уже есть</div>
+            <button type="submit" class="popup__button" disabled>Зарегистрироваться</button>
+          </div>
+        </form>
+        <div class="popup__under">
+            <p class="popup__under-or">или</p>
+            <p class="popup__under-link">Войти</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup-success"> <!-- add to classList "popup_is-opened" -->
+      <div class="popup__content">
+        <img src="<%=require('../../images/popup/close.svg')%>" alt="Cross" class="popup__close">
+        <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+        <a href="#" class="popup__enter">Выполнить вход</a>
+      </div>
+    </div>
+  </div>
+
   <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
 </body>
 
 </html>
-
