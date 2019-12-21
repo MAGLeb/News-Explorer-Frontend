@@ -10,7 +10,9 @@ import ApiNews from './components/api/api-news'
 
 const pageUI = initUI()
 
-const renderAbout = new About(normalAbout)
+const about = new About(normalAbout)
+about.renderAbout()
+
 const apiNews = new ApiNews(publicNewsUrl, timeInMilSecWeek)
 
 const newsRender = new RenderNews(
