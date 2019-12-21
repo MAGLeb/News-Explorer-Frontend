@@ -1,6 +1,6 @@
 /* eslint-disable no-trailing-spaces */
 /* eslint-disable no-restricted-globals */
-export default class Popup {
+export default class PopupEnter {
   constructor(popup, apiBack, validation) {
     this.popup = popup
     this.api = apiBack

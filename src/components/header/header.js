@@ -40,7 +40,6 @@ export default class Header {
   logout() {
     this.apiBack.logout()
       .then(() => {
-        window.location.reload()
         localStorage.removeItem('login')
         localStorage.removeItem('username')
         this.renderHeader()
@@ -49,7 +48,6 @@ export default class Header {
 
   login() {
     this.popupEnter.open()
-    this.renderHeader()
   }
 
 

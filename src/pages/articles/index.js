@@ -16,5 +16,5 @@ const collection = new RenderSaveNews(
 collection.render()
 
 if (!localStorage.getItem('login')) {
-  window.location.href = 'https://news-discoverer.ml'
+  window.location.href = '/'
 }
