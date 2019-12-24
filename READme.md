@@ -11,7 +11,7 @@ https://news-discoverer.ml
 - настроен Webpack и линтер
 - сделан слайдер Flickify
 - сделано меню для mobile
-- сверстаны popup (открываются по добавлению классу "popup_is-opened")
+- сверстаны 3 popup (открываются по добавлению классу "popup_is-opened")
 
 Установка:
 
