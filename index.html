@@ -7,7 +7,7 @@
   <meta name="author" content="Gleb Maximov">
   <meta name="description" content="Find news articles in the planet">
   <title>News Discover</title>
-  <link rel="stylesheet" href="styles/style.3f9a172de72e0400145b.css?9316e16baa22f603fe31">
+  <link rel="stylesheet" href="styles/style.76a2e6c8f649f142657b.css?1db8f7b02d81021ea6e0">
   <link rel="icon" href="./images/favicon.png" type="image/png">
 </head>
 <body>
@@ -16,15 +16,17 @@
       <div class="header__background"></div>
       <div class="header__content">
         <a href="./" class="header__logo">NewsDiscoverer</a>
-        <div class="header__icon header__icon_color_white"></div>
+        <div class="header__icon"></div>
         <div class="menu">
           <ul class="menu__items">
             <li class="menu__item"><a href="./" class="menu__link menu__link_active">Главная</a></li>
             <li class="menu__item"><a href="./about" class="menu__link">О проекте</a></li>
-            <li class="menu__item"><a href="./articles" class="menu__link">Сохранённые статьи</a></li>
+            <li class="menu__item" id="link-to-save-articles"><a href="./articles" class="menu__link">Сохранённые статьи</a></li>
           </ul>
           <button class="menu__button">
-            Глебье-то
+            <div class="menu__name">
+              Авторизируйтесь
+            </div>
             <div class="menu__door menu__door_color_white"></div>
           </button>
         </div>
@@ -43,42 +45,42 @@
         <h1 class="main__title">Что в мире творится?</h1>
         <h2 class="main__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</h2>
         <form class="main__search">
-          <input class="main__input" placeholder="Введите тему новости" required>
-          <button class="main__button">Искать</button>
+          <input class="main__input" placeholder="Введите тему новости">
+          <button class="main__button button">Искать</button>
         </form>
       </div>
     </section>
 
-    <section class="preloader">
+    <section class="preloader preloader-off">
       <div class="preloader__spin"></div>
       <h6 class="preloader__load">Идет поиск новостей...</h6>
     </section>
 
-    <section class="nothing">
+    <section class="nothing nothing-off">
       <img class="nothing__image" src="./images/not-found.svg" alt="Nothing found">
       <h6 class="nothing__title">Ничего не найдено</h6>
       <p class="nothing__subtitle">К сожалению по вашему запросу ничего не найдено.</p>
     </section>
 
-    <section class="results">
+    <section class="results results-off">
       <h3 class="results__title">Результаты поиска</h3>
       <div class="results__container">
-        <div class="card">
-          <div class="card__popup">Войдите, чтобы сохранять статьи</div>
-          <div class="card__mark">
-            <div class="card__mark-save"></div>
+        <template id="card-template">
+          <div class="card">
+            <div class="card__mark"></div>
+            <div class="card__popup">Войдите, чтобы сохранять статьи</div>
+            <a class="card__link" href="#">
+              <div class="card__image"></div>
+              <div class="card__description">
+                <p class="card__data">2 августа, 2019</p>
+                <p class="card__title">Лесные огоньки: история одной фотографии</p>
+                <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+                  из местных чудес природы.</p>
+                <p class="card__author">Медуза</p>
+              </div>
+            </a>
           </div>
-          <a class="card__link" href="#">
-            <img class="card__image" alt="New's image" src="./images/image_1.png">
-            <div class="card__description">
-              <p class="card__data">2 августа, 2019</p>
-              <p class="card__title">Лесные огоньки: история одной фотографии</p>
-              <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
-                из местных чудес природы.</p>
-              <p class="card__author">Медуза</p>
-            </div>
-          </a>
-        </div>
+        </template>
       </div>
       <button class="results__button">Показать еще</button>
     </section>
@@ -87,11 +89,11 @@
       <img class="author__photo" src="./images/author1.jpg" alt="Gleb Maximov">
       <div class="author__description">
         <h2 class="author__title">Об авторе</h2>
-        <p class="author__subtitle">
+        <p class="author__subtitle author__first">
           Это блок с описанием автора проекта. Здесь следует указать, как вас зовут,
           чем вы занимаетесь, какими технологиями разработки владеете.
         </p>
-        <p class="author__subtitle">
+        <p class="author__subtitle author__second">
           Также можно рассказать о процессе обучения в Практикуме,
           чему вы тут научились, и чем можете помочь потенциальным заказчикам.
         </p>
@@ -110,7 +112,7 @@
               <img alt="MAGLeb's Github" src="./images/github.svg">
             </a>
             <a class="footer__social-link" href="https://www.facebook.com/profile.php?id=100007321697995">
-                <img alt="Gleb Maximov Facebook" src="./images/facebook.svg">
+              <img alt="Gleb Maximov Facebook" src="./images/facebook.svg">
             </a>
         </div>
     </footer>
@@ -121,44 +123,52 @@
       <div class="popup__content">
         <img src="./images/close.svg" alt="Cross" class="popup__close">
         <h3 class="popup__title">Вход</h3>
-        <form class="popup__form" name="new">
-          <p class="popup__field-name">Email</p>
-          <input required type="text" name="name" class="popup__input popup__input_type_name" placeholder="Введите почту">
-          <div class="popup__error">Неправильный формат email</div>
-          <p class="popup__field-name">Пароль</p>
-          <input required type="password" name="link" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
-          <button type="submit" class="button popup__button popup__button-active" disabled>Войти</button>
+        <form class="popup__form" name="enter">
+          <p class="popup__field">Email</p>
+          <input required type="text" name="email" class="popup__input popup__input_type_name" placeholder="Введите почту">
+          <div class="popup__errors popup__error">Неправильный формат email</div>
+          <p class="popup__field">Пароль</p>
+          <input required type="password" name="password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
+          <div class="popup__errors popup__error">Пароль не менее 8 символов</div>
+          <div class="popup__bottom">
+            <div class="popup__errors popup__error-top-of-button">Неправильный логин или пароль</div>
+            <button type="submit" class="popup__button" disabled>Войти</button>
+          </div>
         </form>
-        <div class="popup__registration">
-            <p class="popup__registration-or">или</p>
-            <a class="popup__registration-link">Зарегистрироваться</a>
+        <div class="popup__under">
+            <p class="popup__under-or">или</p>
+            <p class="popup__under-link">Зарегистрироваться</p>
         </div>
       </div>
     </div>
 
-    <div class="popup"> <!-- add to classList "popup_is-opened" -->
+    <div class="popup popup-reg"> <!-- add to classList "popup_is-opened" -->
       <div class="popup__content">
         <img src="./images/close.svg" alt="Cross" class="popup__close">
         <h3 class="popup__title">Регистрация</h3>
         <form class="popup__form" name="new">
-          <p class="popup__field-name">Email</p>
-          <input required type="text" name="name" class="popup__input popup__input_type_name" placeholder="Введите почту">
-          <div class="popup__error popup__error-active">Неправильный формат email</div>
-          <p class="popup__field-name">Пароль</p>
-          <input required type="password" name="link" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
-          <p class="popup__field-name">Имя</p>
-          <input required type="text" name="link" class="popup__input popup__input_type_link-url" placeholder="Введите своё имя">
-          <div class="popup__error-user">Такой пользователь уже есть</div>
-          <button type="submit" class="button popup__button popup__button-active" disabled>Зарегистрироваться</button>
+          <p class="popup__field">Email</p>
+          <input required type="text" name="email" class="popup__input popup__input_type_name" placeholder="Введите почту">
+          <div class="popup__errors popup__error">Неправильный формат email</div>
+          <p class="popup__field">Пароль</p>
+          <input required type="password" name="password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
+          <div class="popup__errors popup__error popup__error-margin">Пароль не менее 8 символов</div>
+          <p class="popup__field">Имя</p>
+          <input required type="text" name="name" class="popup__input popup__input_type_link-url" placeholder="Введите своё имя">
+          <div class="popup__errors popup__error">Имя должно быть от 2 до 30 символов</div>
+          <div class="popup__bottom">
+            <div class="popup__errors popup__error-top-of-button">Такой пользователь уже есть</div>
+            <button type="submit" class="popup__button" disabled>Зарегистрироваться</button>
+          </div>
         </form>
-        <div class="popup__registration">
-            <p class="popup__registration-or">или</p>
-            <a class="popup__registration-link">Войти</a>
+        <div class="popup__under">
+            <p class="popup__under-or">или</p>
+            <p class="popup__under-link">Войти</p>
         </div>
       </div>
     </div>
 
-    <div class="popup"> <!-- add to classList "popup_is-opened" -->
+    <div class="popup popup-success"> <!-- add to classList "popup_is-opened" -->
       <div class="popup__content">
         <img src="./images/close.svg" alt="Cross" class="popup__close">
         <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
@@ -167,8 +177,7 @@
     </div>
   </div>
 
-  <script src="main.9316e16baa22f603fe31.js?9316e16baa22f603fe31"></script>
+  <script src="main.1db8f7b02d81021ea6e0.js?1db8f7b02d81021ea6e0"></script>
 </body>
 
 </html>
-

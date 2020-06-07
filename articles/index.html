@@ -7,7 +7,7 @@
   <meta name="author" content="Gleb Maximov">
   <meta name="description" content="About the project">
   <title>News Discover</title>
-  <link rel="stylesheet" href="../styles/style.426568e5a839669556aa.css?9316e16baa22f603fe31">
+  <link rel="stylesheet" href="../styles/style.61898f8c4ad92eb8fd96.css?1db8f7b02d81021ea6e0">
   <link rel="icon" href=".././images/favicon.png" type="image/png">
 </head>
 <body>
@@ -16,15 +16,17 @@
       <div class="header__background"></div>
       <div class="header__content">
         <a href="../" class="header__logo">NewsDiscoverer</a>
-        <div class="header__icon header__icon_color_black"></div>
+        <div class="header__icon"></div>
         <div class="menu">
           <ul class="menu__items">
             <li class="menu__item"><a href="../" class="menu__link">Главная</a></li>
             <li class="menu__item"><a href="../about" class="menu__link">О проекте</a></li>
-            <li class="menu__item"><a href="../articles" class="menu__link menu__link_active">Сохранённые статьи</a></li>
+            <li class="menu__item" id="link-to-save-articles"><a href="../articles" class="menu__link menu__link_active">Сохранённые статьи</a></li>
           </ul>
           <button class="menu__button">
-            Глебье-то
+            <div class="menu__name">
+              Авторизируйтесь
+            </div>
             <div class="menu__door menu__door_color_black"></div>
           </button>
         </div>
@@ -33,34 +35,36 @@
 
     <section class="topic">
       <p class="topic__mini">Сохранённые статьи</p>
-      <h2 class="topic__title">Глебье-то, у вас 5 сохранённых статей</h2>
-      <div class="topic__keys">
-        <p class="topic__key">По ключевым словам:</p>
-        <p class="topic__key_bold">Природа, Тайга</p>
-        <p class="topic__key">и</p>
-        <p class="topic__key_bold">2 другим</p>
-      </div>
+      <h2 class="topic__title">, у вас <span id="amount-cards"></span> сохранённых статей</h2>
+      <p class="topic__keywords">По ключевым словам:
+        <b><span class="topic__first"></span><span class="topic__second"></span></b>
+        <span class="topic__last"> и
+          <b><span class="topic__more"></span> другим</b>
+        </span>
+      </p>
     </section>
 
     <section class="results">
       <div class="results__container">
-        <div class="card">
-          <div class="card__mark-del">
-            <div class="card__mark-del-trash"></div>
-            <div class="card__popup-remove">Убрать из сохранённых</div>
-          </div>
-          <div class="card__key">Природа</div>
-          <a class="card__link" href="#">
-            <img class="card__image" alt="New's image" src=".././images/image_1.png">
-            <div class="card__description">
-              <p class="card__data">2 августа, 2019</p>
-              <p class="card__title">Лесные огоньки: история одной фотографии</p>
-              <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
-                из местных чудес природы.</p>
-              <p class="card__author">Медуза</p>
+        <template id="card-template-save">
+          <div class="card">
+            <div class="card__mark-del">
+              <div class="card__mark-del-trash"></div>
+              <div class="card__popup-remove">Убрать из сохранённых</div>
             </div>
-          </a>
-        </div>
+            <div class="card__key">Природа</div>
+            <a class="card__link" href="#">
+              <div class="card__image"></div>
+              <div class="card__description">
+                <p class="card__data">2 августа, 2019</p>
+                <p class="card__title">Лесные огоньки: история одной фотографии</p>
+                <p class="card__subtitle">Фотограф отвлеклась от освещения суровой политической реальности Мексики,
+                  из местных чудес природы.</p>
+                <p class="card__author">Медуза</p>
+              </div>
+            </a>
+          </div>
+        </template>
       </div>
     </section>
 
@@ -82,8 +86,66 @@
     </footer>
   </div>
 
-  <script src="../articles/articles.9316e16baa22f603fe31.js?9316e16baa22f603fe31"></script>
+  <div class="service-area">
+    <div class="popup"> <!-- add to classList "popup_is-opened" -->
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="Cross" class="popup__close">
+        <h3 class="popup__title">Вход</h3>
+        <form class="popup__form" name="enter">
+          <p class="popup__field">Email</p>
+          <input required type="text" name="email" class="popup__input popup__input_type_name" placeholder="Введите почту">
+          <div class="popup__errors popup__error">Неправильный формат email</div>
+          <p class="popup__field">Пароль</p>
+          <input required type="password" name="password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
+          <div class="popup__errors popup__error">Пароль не менее 8 символов</div>
+          <div class="popup__bottom">
+            <div class="popup__errors popup__error-top-of-button">Неправильный логин или пароль</div>
+            <button type="submit" class="popup__button" disabled>Войти</button>
+          </div>
+        </form>
+        <div class="popup__under">
+            <p class="popup__under-or">или</p>
+            <p class="popup__under-link">Зарегистрироваться</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup-reg"> <!-- add to classList "popup_is-opened" -->
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="Cross" class="popup__close">
+        <h3 class="popup__title">Регистрация</h3>
+        <form class="popup__form" name="new">
+          <p class="popup__field">Email</p>
+          <input required type="text" name="email" class="popup__input popup__input_type_name" placeholder="Введите почту">
+          <div class="popup__errors popup__error">Неправильный формат email</div>
+          <p class="popup__field">Пароль</p>
+          <input required type="password" name="password" class="popup__input popup__input_type_link-url" placeholder="Введите пароль">
+          <div class="popup__errors popup__error popup__error-margin">Пароль не менее 8 символов</div>
+          <p class="popup__field">Имя</p>
+          <input required type="text" name="name" class="popup__input popup__input_type_link-url" placeholder="Введите своё имя">
+          <div class="popup__errors popup__error">Имя должно быть от 2 до 30 символов</div>
+          <div class="popup__bottom">
+            <div class="popup__errors popup__error-top-of-button">Такой пользователь уже есть</div>
+            <button type="submit" class="popup__button" disabled>Зарегистрироваться</button>
+          </div>
+        </form>
+        <div class="popup__under">
+            <p class="popup__under-or">или</p>
+            <p class="popup__under-link">Войти</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="popup popup-success"> <!-- add to classList "popup_is-opened" -->
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="Cross" class="popup__close">
+        <h3 class="popup__title">Пользователь успешно зарегистрирован!</h3>
+        <a href="#" class="popup__enter">Выполнить вход</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="../articles/articles.1db8f7b02d81021ea6e0.js?1db8f7b02d81021ea6e0"></script>
 </body>
 
 </html>
-
