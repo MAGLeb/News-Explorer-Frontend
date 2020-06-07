@@ -13,6 +13,7 @@ https://magleb.github.io/News-Explorer-Frontend/about/
 - сделан слайдер Flickify с использованием API github
 - настроена работа с публичным API-news
 - сделано меню для mobile
+- сверстаны 3 popup (открываются по добавлению классу "popup_is-opened")
 
 ## Локально установить
 Установите:
