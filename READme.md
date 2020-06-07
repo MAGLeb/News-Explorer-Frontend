@@ -1,11 +1,12 @@
-# It is frontend for news-explorer.
+# Frontend for news-explorer.
+Сервер реализованный на Node + MondoDB можно посмотреть [тут](https://github.com/MAGLeb/News-API)
+
+https://news-discoverer.ml
+(Хостинг действителен до 20.05.2020)
 
 https://magleb.github.io/News-Explorer-Frontend/about/
 
-https://news-discoverer.ml
-
 Реализованы:
-
 - верстка трех страниц согласно макету
 - адаптивная верстка для всех разрешений
 - настроен Webpack и линтер
@@ -13,14 +14,12 @@ https://news-discoverer.ml
 - настроена работа с публичным API-news
 - сделано меню для mobile
 
-
+## Локально установить
 Установите:
-
 1. Клонируйте репозиторий
 2. Выполните `npm install` для установки необходимых пакетов
 
 Запустите:
-
 - `nmp run dev` -- запуск в режиме разработки
 - `npm run build` -- компиляция продакшен версии
 - `npm run deploy` -- загрузка на хостинг
