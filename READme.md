@@ -1,6 +1,7 @@
 # Frontend for news-explorer.
 
 https://news-discoverer.ml
+
 Хостинг действителен до 20.05.2020, если хотите посмотреть сервис без серверной части, то вам сюда:
 https://magleb.github.io/News-Explorer-Frontend/about/
 
